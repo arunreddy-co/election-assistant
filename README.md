@@ -68,7 +68,7 @@ with three key differentiators:
 ┌─────────────────▼───────────────────────────┐
 │         Google Cloud Services               │
 │                                             │
-│  Gemini 3 │ Maps API │ Translate │Firestore │
+│  Gemini 2.5 │ Maps API │ Translate │Firestore │
 │  (Vertex)  │          │    API    │          │
 └─────────────────────────────────────────────┘
 ```
@@ -116,7 +116,7 @@ The app delivers four distinct experiences based on user profile:
 ### Google Services Integration
 | Service | Purpose | Why Essential |
 |---------|---------|---------------|
-| Gemini 3 (Vertex AI) | Conversational AI, personalized guidance, simulator feedback | Core intelligence — removing it breaks personalization and chat |
+| Gemini 2.5 (Vertex AI) | Conversational AI, personalized guidance, simulator feedback | Core intelligence — removing it breaks personalization and chat |
 | Google Maps API | Polling booth finder with interactive map | Real utility — voters need to find their booth |
 | Cloud Translation API | English ↔ Hindi bilingual support | Accessibility — 500M+ Hindi speakers need native language |
 | Firestore | User profiles, checklist progress, response cache | Persistence — removing it breaks progress tracking |
@@ -221,7 +221,7 @@ gcloud run deploy voteready \
 ## 🛠️ Tech Stack
 - **Backend**: Python 3.11, FastAPI, Pydantic
 - **Frontend**: Vanilla JS, Tailwind CSS, Chart.js
-- **AI**: Gemini 3 via Vertex AI
+- **AI**: Gemini 2.5 via Vertex AI
 - **Database**: Google Cloud Firestore
 - **APIs**: Google Maps, Cloud Translation
 - **Deployment**: Google Cloud Run, Docker
