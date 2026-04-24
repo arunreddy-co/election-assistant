@@ -149,6 +149,14 @@ async def serve_frontend():
         raise HTTPException(status_code=404, detail="Frontend not found")
     return HTMLResponse(content=frontend_path.read_text(encoding="utf-8"))
 
+@app.get("/api/states")
+async def get_states():
+    """Get all Indian states and UTs."""
+    data_path = Path(__file__).parent / "data" / "states.json"
+    with open(data_path, "r", encoding="utf-8") as f:
+        states = json.load(f)
+    return success_response(data=states)
+
 @app.post("/api/onboard")
 @limiter.limit(f"{settings.rate_limit_per_minute}/minute")
 async def onboard_user(request: Request, body: OnboardRequest):

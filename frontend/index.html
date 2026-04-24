@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VoteReady — Your personalized election readiness guide for Indian elections">
+    <meta name="theme-color" content="#FF6B35">
+    <title>VoteReady — Your Vote, Your Voice</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E55A2B;
+            --primary-light: #FF8F65;
+            --secondary: #1B3A5C;
+            --secondary-dark: #0F2A45;
+            --secondary-light: #2D5F8A;
+            --accent: #2E8B57;
+            --accent-light: #4CAF7D;
+            --bg-primary: #FAFBFC;
+            --bg-card: #FFFFFF;
+            --bg-dark: #1A1A2E;
+            --text-primary: #1A1A2E;
+            --text-secondary: #5A6178;
+            --text-muted: #8B92A5;
+            --border: #E2E8F0;
+            --border-light: #F1F5F9;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --info: #3B82F6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Devanagari', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .high-contrast {
+            --bg-primary: #000000;
+            --bg-card: #111111;
+            --text-primary: #FFFFFF;
+            --text-secondary: #EEEEEE;
+            --text-muted: #CCCCCC;
+            --border: #FFFFFF;
+            --primary: #FFFF00;
+            --primary-dark: #CCCC00;
+            --secondary: #00FFFF;
+            --accent: #00FF00;
+        }
+
+        .high-contrast * {
+            border-color: var(--border) !important;
+        }
+
+        .large-font {
+            font-size: 1.25rem !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-card);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border-light);
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.5s ease-in-out;
+        }
+        
+        .chat-msg {
+            padding: 10px 14px;
+            border-radius: 12px;
+            max-width: 80%;
+            margin-bottom: 8px;
+        }
+        .chat-msg.assistant {
+            background-color: #F1F5F9;
+            align-self: flex-start;
+            color: var(--text-primary);
+        }
+        .chat-msg.user {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        #chat-messages {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Animations */
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .slide-up { animation: slideUp 0.3s ease-out; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        /* A11y Utils */
+        .focus-ring:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: white;
+            z-index: 9999;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            animation: slideInRight 0.3s ease-out;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white focus:p-4 focus:z-50 focus:shadow-lg rounded">
+        Skip to main content
+    </a>
+    
+    <!-- Accessibility Toolbar -->
+    <div id="a11y-toolbar" role="toolbar" aria-label="Accessibility options" class="fixed top-4 right-4 z-50 flex gap-2">
+        <button onclick="toggleFontSize()" aria-label="Toggle Font Size" class="bg-white shadow p-2 rounded focus-ring text-lg font-bold w-10 h-10 flex items-center justify-center text-gray-700">A+</button>
+        <button onclick="toggleHighContrast()" aria-label="Toggle High Contrast" class="bg-white shadow p-2 rounded focus-ring text-lg w-10 h-10 flex items-center justify-center">🌓</button>
+        <button onclick="toggleLanguage()" aria-label="Toggle Language" class="bg-white shadow p-2 rounded focus-ring text-sm font-bold w-10 h-10 flex items-center justify-center text-gray-700" id="lang-toggle-btn">EN</button>
+    </div>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        
+        <!-- Screen 1: Language Selection -->
+        <section id="screen-language" aria-label="Language selection" class="fade-in">
+            <div class="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-b from-orange-50 via-white to-green-50">
+                <div class="mb-8 text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                        <svg class="w-12 h-12 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>
+                    </div>
+                    <h1 class="text-5xl font-bold text-[#1B3A5C] mb-2">VoteReady</h1>
+                    <p class="text-xl text-gray-600 mt-2 font-medium">Your Vote, Your Voice</p>
+                    <p class="text-lg text-gray-500 font-medium">आपका वोट, आपकी आवाज़</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+                    <button onclick="selectLanguage('en')" class="btn-primary flex-1 flex flex-col items-center py-6 text-xl focus-ring shadow-lg" aria-label="Continue in English">
+                        <span class="text-4xl mb-2">🇮🇳</span>
+                        <span>English</span>
+                    </button>
+                    <button onclick="selectLanguage('hi')" class="btn-primary flex-1 flex flex-col items-center py-6 text-xl focus-ring shadow-lg" aria-label="हिंदी में जारी रखें">
+                        <span class="text-4xl mb-2">🇮🇳</span>
+                        <span class="font-bold">हिंदी</span>
+                    </button>
+                </div>
+                
+                <p class="mt-16 text-sm text-gray-400 font-medium tracking-wide uppercase">Empowering every Indian voter</p>
+            </div>
+        </section>
+        
+        <!-- Screen 2: Onboarding -->
+        <section id="screen-onboarding" aria-label="User registration" hidden class="fade-in">
+            <div class="min-h-screen flex items-center justify-center p-4 bg-gray-50">
+                <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                    <button onclick="goToScreen('language')" aria-label="Go back" class="text-gray-400 hover:text-gray-800 focus-ring mb-4 text-2xl font-bold">&larr;</button>
+                    <h2 class="text-3xl font-bold text-gray-800" data-i18n="onboard_title">Tell us about yourself</h2>
+                    <p class="text-gray-500 mt-2 mb-6" data-i18n="onboard_subtitle">We'll personalize your election journey</p>
+                    
+                    <div class="space-y-5 mt-6">
+                        <div>
+                            <label for="input-name" class="block text-sm font-semibold text-gray-700" data-i18n="label_name">Your Name *</label>
+                            <input id="input-name" type="text" maxlength="100" required placeholder="Enter your name" aria-required="true" class="w-full border-2 border-gray-200 rounded-lg p-3 mt-1 focus:border-orange-500 focus:outline-none transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label for="input-age" class="block text-sm font-semibold text-gray-700" data-i18n="label_age">Your Age *</label>
+                            <input id="input-age" type="number" min="1" max="150" required placeholder="Enter your age" aria-required="true" class="w-full border-2 border-gray-200 rounded-lg p-3 mt-1 focus:border-orange-500 focus:outline-none transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label for="input-state" class="block text-sm font-semibold text-gray-700" data-i18n="label_state">Your State *</label>
+                            <select id="input-state" required aria-required="true" class="w-full border-2 border-gray-200 rounded-lg p-3 mt-1 focus:border-orange-500 focus:outline-none transition-colors" onchange="updateDistricts()">
+                                <option value="">Select your state</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="input-district" class="block text-sm font-semibold text-gray-700" data-i18n="label_district">Your District *</label>
+                            <select id="input-district" required aria-required="true" class="w-full border-2 border-gray-200 rounded-lg p-3 mt-1 focus:border-orange-500 focus:outline-none transition-colors">
+                                <option value="">Select state first</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="input-voterid" class="block text-sm font-semibold text-gray-700" data-i18n="label_voterid">Voter ID (Optional)</label>
+                            <input id="input-voterid" type="text" maxlength="10" placeholder="e.g., ABC1234567" class="w-full border-2 border-gray-200 rounded-lg p-3 mt-1 uppercase focus:border-orange-500 focus:outline-none transition-colors">
+                            <p class="text-xs text-gray-500 mt-1" data-i18n="label_voterid_hint">3 letters + 7 digits. Leave blank if none.</p>
+                        </div>
+                        
+                        <button onclick="submitOnboarding()" id="btn-submit" class="w-full btn-primary text-lg mt-4 flex items-center justify-center gap-2 shadow-md" aria-label="Show my elections">
+                            <span data-i18n="btn_show_elections">Show My Elections</span> &rarr;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Screen 3: Dashboard -->
+        <section id="screen-dashboard" aria-label="Election dashboard" hidden class="fade-in pb-24">
+            <header class="bg-white shadow-sm sticky top-0 z-40">
+                <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+                    <h1 class="text-2xl font-bold text-[#1B3A5C]">VoteReady</h1>
+                </div>
+            </header>
+            
+            <div class="max-w-4xl mx-auto px-4 mt-6 space-y-6">
+                <!-- Welcome Banner -->
+                <div class="bg-gradient-to-r from-orange-100 to-orange-50 rounded-2xl p-6 border border-orange-200">
+                    <h2 class="text-2xl font-bold text-gray-800" id="dash-welcome">Welcome!</h2>
+                    <p class="text-gray-700 mt-2 text-lg" id="dash-guidance"></p>
+                </div>
+                
+                <!-- Eligibility Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex items-start gap-4" id="dash-eligibility-card">
+                    <div class="text-4xl" id="eligibility-icon">✅</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800" id="eligibility-title">Status</h3>
+                        <p class="text-gray-600 mt-1" id="eligibility-msg"></p>
+                        <div class="mt-4" id="eligibility-actions"></div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions Row -->
+                <div class="flex overflow-x-auto pb-2 gap-3 snap-x">
+                    <button onclick="goToScreen('simulator')" class="snap-start shrink-0 bg-blue-50 text-blue-700 font-semibold py-3 px-5 rounded-full border border-blue-100 hover:bg-blue-100 focus-ring" data-i18n="action_practice">🗳 Practice Voting</button>
+                    <button onclick="openBoothFinder()" class="snap-start shrink-0 bg-green-50 text-green-700 font-semibold py-3 px-5 rounded-full border border-green-100 hover:bg-green-100 focus-ring" data-i18n="action_booth">📍 Find My Booth</button>
+                    <button onclick="shareApp()" class="snap-start shrink-0 bg-purple-50 text-purple-700 font-semibold py-3 px-5 rounded-full border border-purple-100 hover:bg-purple-100 focus-ring" data-i18n="action_share">📤 Share with Friends</button>
+                </div>
+                
+                <!-- Elections List -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="your_elections">Your Elections</h3>
+                    <div id="elections-list" class="space-y-4"></div>
+                </div>
+                
+                <!-- Readiness Checklist -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800" data-i18n="readiness_checklist">Readiness Checklist</h3>
+                            <p class="text-sm text-gray-500 mt-1" id="checklist-status">0 of 6 completed</p>
+                        </div>
+                        <div class="relative w-16 h-16">
+                            <svg class="progress-ring w-full h-full" viewBox="0 0 100 100">
+                                <circle class="text-gray-200 stroke-current" stroke-width="8" cx="50" cy="50" r="40" fill="transparent"></circle>
+                                <circle id="checklist-ring" class="text-green-500 stroke-current progress-ring__circle" stroke-width="8" stroke-linecap="round" cx="50" cy="50" r="40" fill="transparent" stroke-dasharray="251.2" stroke-dashoffset="251.2"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="checklist-items" class="space-y-3"></div>
+                </div>
+                
+                <!-- Chart Section -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6" id="chart-section">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="turnout_trends">Voter Turnout Trends</h3>
+                    <div class="relative h-64 w-full">
+                        <canvas id="turnoutChart" aria-label="Bar chart showing historical voter turnout"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Screen 4: Election Detail -->
+        <section id="screen-election-detail" aria-label="Election details" hidden class="fade-in pb-24">
+            <header class="bg-white shadow-sm sticky top-0 z-40">
+                <div class="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
+                    <button onclick="goToScreen('dashboard')" class="text-2xl font-bold text-gray-600 focus-ring">&larr;</button>
+                    <h1 class="text-xl font-bold text-gray-800 truncate" id="detail-title">Election Detail</h1>
+                </div>
+            </header>
+            
+            <div class="max-w-4xl mx-auto px-4 mt-6 space-y-6">
+                <!-- Header Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800" id="detail-full-title"></h2>
+                            <p class="text-gray-600 mt-2" id="detail-desc"></p>
+                        </div>
+                        <div class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap" id="detail-countdown"></div>
+                    </div>
+                </div>
+                
+                <!-- Process Accordion -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="step_by_step">Step-by-Step Guide</h3>
+                    <div id="process-accordion" class="space-y-3"></div>
+                </div>
+                
+                <!-- Polling Booth -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6" id="booth-section">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="find_booth">Polling Booth Locator</h3>
+                    <p class="text-gray-600 mb-4" data-i18n="booth_desc">Find the polling stations nearest to you.</p>
+                    <button onclick="loadBoothMap()" class="btn-secondary w-full" id="btn-load-map" data-i18n="btn_load_map">Load Map</button>
+                    <div id="map-container" class="w-full h-64 bg-gray-100 rounded-lg mt-4 hidden"></div>
+                    <div id="booth-list" class="mt-4 space-y-2"></div>
+                </div>
+                
+                <button onclick="goToScreen('simulator')" class="w-full btn-primary text-lg flex justify-center items-center gap-2 shadow-lg" data-i18n="action_practice">
+                    🗳 Practice Election Day
+                </button>
+            </div>
+        </section>
+        
+        <!-- Screen 5: Simulator -->
+        <section id="screen-simulator" aria-label="Election day simulator" hidden class="fade-in">
+            <div class="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
+                <div class="w-full max-w-xl">
+                    <button onclick="goToScreen('dashboard')" class="mb-6 text-gray-500 font-bold focus-ring">&larr; <span data-i18n="back_to_dash">Back to Dashboard</span></button>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-100 relative overflow-hidden" id="sim-container">
+                        <div class="w-full bg-gray-200 h-2 rounded-full mb-8 absolute top-0 left-0 rounded-none">
+                            <div class="bg-orange-500 h-2" id="sim-progress" style="width: 0%"></div>
+                        </div>
+                        
+                        <p class="text-sm font-bold text-orange-500 mb-2" id="sim-step-text">Step 1 of 6</p>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6" id="sim-scenario-text">Loading scenario...</h3>
+                        
+                        <div class="space-y-3" id="sim-options"></div>
+                        
+                        <!-- Feedback Card -->
+                        <div id="sim-feedback" hidden class="mt-8 p-6 rounded-xl slide-up">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-3xl" id="sim-fb-icon">✅</span>
+                                <h4 class="text-xl font-bold" id="sim-fb-title">Correct!</h4>
+                            </div>
+                            <p class="text-gray-700" id="sim-fb-text"></p>
+                            <button onclick="simNextStep()" class="mt-6 btn-primary w-full" data-i18n="next_step">Next &rarr;</button>
+                        </div>
+                        
+                        <!-- Score Card -->
+                        <div id="sim-score" hidden class="text-center py-6 slide-up">
+                            <div class="text-6xl mb-4">🎉</div>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-2"><span data-i18n="your_score">Your Score:</span> <span id="sim-score-val"></span>/6</h2>
+                            <p class="text-xl text-gray-600 mb-6" id="sim-score-msg"></p>
+                            <div class="flex gap-4 justify-center">
+                                <button onclick="simRestart()" class="btn-secondary flex-1" data-i18n="try_again">Try Again</button>
+                                <button onclick="goToScreen('dashboard')" class="btn-primary flex-1" data-i18n="finish">Finish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Chat Widget -->
+    <div id="chat-widget" hidden>
+        <button id="chat-toggle" onclick="toggleChat()" aria-label="Open VoteReady assistant" class="fixed bottom-6 right-6 w-14 h-14 bg-orange-500 rounded-full shadow-xl flex items-center justify-center text-white text-2xl hover:bg-orange-600 z-50 focus-ring transition-transform hover:scale-105">
+            💬
+        </button>
+        
+        <div id="chat-panel" hidden class="fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] sm:w-96 max-h-[500px] h-[70vh] bg-white rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden slide-up border border-gray-100" role="dialog" aria-label="VoteReady Chat Assistant">
+            <div class="flex items-center justify-between p-4 border-b bg-gray-50">
+                <div>
+                    <h3 class="font-bold text-gray-800">VoteReady Assistant</h3>
+                    <p class="text-xs text-gray-500" data-i18n="chat_subtitle">Ask me anything about voting</p>
+                </div>
+                <button onclick="toggleChat()" aria-label="Close chat" class="text-gray-500 hover:text-gray-800 text-xl font-bold px-2">&times;</button>
+            </div>
+            
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-4" role="log" aria-live="polite">
+                <div class="chat-msg assistant" id="chat-greeting">
+                    Hi! I'm VoteReady. Ask me anything about elections and voting! 🗳️
+                </div>
+            </div>
+            
+            <div class="p-4 border-t bg-white flex gap-2">
+                <input id="chat-input" type="text" maxlength="500" placeholder="Type your question..." aria-label="Type your question" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:border-orange-500 focus:outline-none" onkeypress="if(event.key==='Enter') sendChat()">
+                <button onclick="sendChat()" aria-label="Send message" class="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600 focus-ring">&uarr;</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" hidden class="fixed inset-0 bg-gray-900/40 backdrop-blur-sm flex items-center justify-center z-[100]" role="status" aria-label="Loading">
+        <div class="bg-white rounded-2xl p-8 text-center shadow-2xl flex flex-col items-center">
+            <div class="w-12 h-12 border-4 border-orange-200 border-t-orange-500 rounded-full animate-spin"></div>
+            <p id="loading-text" class="mt-4 text-gray-700 font-semibold" data-i18n="loading">Preparing your journey...</p>
+        </div>
+    </div>
+    
+    <script>
+        // ============================================
+        // APP STATE & I18N
+        // ============================================
+        const AppState = {
+            language: 'en',
+            currentScreen: 'language',
+            user: null,
+            eligibility: null,
+            elections: [],
+            checklist: null,
+            guidance: null,
+            nearestElection: null,
+            simulatorScenarios: [],
+            simStep: 0,
+            simScore: 0,
+            mapsLoaded: false,
+            chartLoaded: false,
+            highContrast: false,
+            largeFontSize: false,
+        };
+
+        const UI_TEXT = {
+            en: {
+                onboard_title: "Tell us about yourself",
+                onboard_subtitle: "We'll personalize your election journey",
+                label_name: "Your Name *",
+                label_age: "Your Age *",
+                label_state: "Your State *",
+                label_district: "Your District *",
+                label_voterid: "Voter ID (Optional)",
+                label_voterid_hint: "3 letters + 7 digits. Leave blank if none.",
+                btn_show_elections: "Show My Elections",
+                action_practice: "🗳 Practice Voting",
+                action_booth: "📍 Find My Booth",
+                action_share: "📤 Share with Friends",
+                your_elections: "Your Elections",
+                readiness_checklist: "Readiness Checklist",
+                turnout_trends: "Voter Turnout Trends",
+                step_by_step: "Step-by-Step Guide",
+                find_booth: "Polling Booth Locator",
+                booth_desc: "Find the polling stations nearest to you.",
+                btn_load_map: "Load Map",
+                back_to_dash: "Back to Dashboard",
+                next_step: "Next \u2192",
+                your_score: "Your Score:",
+                try_again: "Try Again",
+                finish: "Finish",
+                chat_subtitle: "Ask me anything about voting",
+                loading: "Preparing your journey...",
+                chat_greeting: "Hi {name}! I'm VoteReady. Ask me anything about elections and voting! 🗳️",
+                welcome: "Welcome",
+            },
+            hi: {
+                onboard_title: "अपने बारे में बताएं",
+                onboard_subtitle: "हम आपकी चुनाव यात्रा को व्यक्तिगत बनाएंगे",
+                label_name: "आपका नाम *",
+                label_age: "आपकी आयु *",
+                label_state: "आपका राज्य *",
+                label_district: "आपका ज़िला *",
+                label_voterid: "वोटर आईडी (वैकल्पिक)",
+                label_voterid_hint: "3 अक्षर + 7 अंक। यदि नहीं है तो खाली छोड़ दें।",
+                btn_show_elections: "मेरे चुनाव दिखाएं",
+                action_practice: "🗳 अभ्यास मतदान",
+                action_booth: "📍 अपना बूथ खोजें",
+                action_share: "📤 दोस्तों के साथ साझा करें",
+                your_elections: "आपके चुनाव",
+                readiness_checklist: "तैयारी चेकलिस्ट",
+                turnout_trends: "मतदान रुझान",
+                step_by_step: "चरण-दर-चरण मार्गदर्शिका",
+                find_booth: "मतदान केंद्र लोकेटर",
+                booth_desc: "अपने निकटतम मतदान केंद्र खोजें।",
+                btn_load_map: "मानचित्र लोड करें",
+                back_to_dash: "डैशबोर्ड पर वापस",
+                next_step: "अगला \u2192",
+                your_score: "आपका स्कोर:",
+                try_again: "पुनः प्रयास करें",
+                finish: "समाप्त करें",
+                chat_subtitle: "मतदान के बारे में कुछ भी पूछें",
+                loading: "आपकी यात्रा तैयार की जा रही है...",
+                chat_greeting: "नमस्ते {name}! मैं VoteReady हूँ। मुझसे चुनाव और मतदान के बारे में कुछ भी पूछें! 🗳️",
+                welcome: "स्वागत है",
+            }
+        };
+
+        function t(key) {
+            return UI_TEXT[AppState.language]?.[key] || UI_TEXT.en[key] || key;
+        }
+
+        function updateUIText() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerHTML = t(key);
+            });
+            document.documentElement.lang = AppState.language;
+            document.getElementById('lang-toggle-btn').innerText = AppState.language === 'en' ? 'EN' : 'हिं';
+            
+            // Re-render components if user exists
+            if (AppState.user) {
+                renderDashboard();
+            }
+        }
+
+        function selectLanguage(lang) {
+            AppState.language = lang;
+            updateUIText();
+            fetchStates();
+            goToScreen('onboarding');
+        }
+
+        function toggleLanguage() {
+            AppState.language = AppState.language === 'en' ? 'hi' : 'en';
+            updateUIText();
+        }
+
+        // ============================================
+        // A11Y TOGGLES
+        // ============================================
+        function toggleFontSize() {
+            AppState.largeFontSize = !AppState.largeFontSize;
+            if (AppState.largeFontSize) {
+                document.documentElement.classList.add('large-font');
+            } else {
+                document.documentElement.classList.remove('large-font');
+            }
+            localStorage.setItem('vr_largeFont', AppState.largeFontSize);
+        }
+
+        function toggleHighContrast() {
+            AppState.highContrast = !AppState.highContrast;
+            if (AppState.highContrast) {
+                document.body.classList.add('high-contrast');
+            } else {
+                document.body.classList.remove('high-contrast');
+            }
+            localStorage.setItem('vr_highContrast', AppState.highContrast);
+        }
+
+        // ============================================
+        // UTILS
+        // ============================================
+        function showLoading(show, textKey = 'loading') {
+            const overlay = document.getElementById('loading-overlay');
+            document.getElementById('loading-text').innerText = t(textKey);
+            if(show) overlay.removeAttribute('hidden');
+            else overlay.setAttribute('hidden', '');
+        }
+
+        function showToast(msg, type='info') {
+            const container = document.body;
+            const toast = document.createElement('div');
+            toast.className = `toast bg-${type==='error'?'red':'gray'}-800`;
+            toast.innerText = msg;
+            toast.setAttribute('role', type==='error'?'alert':'status');
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+        }
+
+        function goToScreen(screenId) {
+            ['language', 'onboarding', 'dashboard', 'election-detail', 'simulator'].forEach(id => {
+                document.getElementById(`screen-${id}`).setAttribute('hidden', '');
+            });
+            document.getElementById(`screen-${screenId}`).removeAttribute('hidden');
+            AppState.currentScreen = screenId;
+            window.scrollTo(0, 0);
+            
+            const chatWidget = document.getElementById('chat-widget');
+            if (['dashboard', 'election-detail'].includes(screenId)) {
+                chatWidget.removeAttribute('hidden');
+            } else {
+                chatWidget.setAttribute('hidden', '');
+            }
+            
+            if(screenId === 'dashboard' && !AppState.chartLoaded) {
+                setTimeout(initChart, 500);
+            }
+        }
+
+        // ============================================
+        // API CALLS
+        // ============================================
+        async function apiCall(method, path, body = null) {
+            try {
+                const opts = {
+                    method,
+                    headers: { 'Content-Type': 'application/json' }
+                };
+                if (body) opts.body = JSON.stringify(body);
+                
+                const res = await fetch(path, opts);
+                const data = await res.json();
+                if (data.status === 'success') {
+                    return data.data;
+                } else {
+                    showToast(data.error?.message || "Error occurred", "error");
+                    return null;
+                }
+            } catch (e) {
+                showToast("Network error. Please try again.", "error");
+                return null;
+            }
+        }
+
+        // ============================================
+        // ONBOARDING
+        // ============================================
+        let statesData = [];
+        async function fetchStates() {
+            const res = await fetch('/api/states');
+            const data = await res.json();
+            statesData = data.data || data;
+            const stateSelect = document.getElementById('input-state');
+            stateSelect.innerHTML = '<option value="">Select your state</option>';
+            statesData.forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s.name; 
+                opt.innerText = AppState.language === 'hi' ? s.name_hi : s.name;
+                stateSelect.appendChild(opt);
+            });
+        }
+
+        function updateDistricts() {
+            const state = document.getElementById('input-state').value;
+            const distSelect = document.getElementById('input-district');
+            distSelect.innerHTML = '<option value="">Select district</option>';
+            const stateObj = statesData.find(s => s.name === state);
+            if (stateObj && stateObj.districts) {
+                stateObj.districts.forEach(d => {
+                    const opt = document.createElement('option');
+                    opt.value = d; opt.innerText = d;
+                    distSelect.appendChild(opt);
+                });
+            }
+        }
+
+        async function submitOnboarding() {
+            const name = document.getElementById('input-name').value.trim();
+            const age = parseInt(document.getElementById('input-age').value);
+            const state = document.getElementById('input-state').value;
+            const district = document.getElementById('input-district').value;
+            const voterid = document.getElementById('input-voterid').value.trim();
+
+            if(!name || !age || !state || !district) {
+                showToast("Please fill all required fields", "error");
+                return;
+            }
+            if(voterid && !/^[a-zA-Z]{3}[0-9]{7}$/.test(voterid)) {
+                showToast("Invalid Voter ID format (3 letters + 7 numbers)", "error");
+                return;
+            }
+
+            showLoading(true);
+            const data = await apiCall('POST', '/api/onboard', {
+                name, age, state, district, voter_id: voterid || null, language: AppState.language
+            });
+            showLoading(false);
+
+            if(data) {
+                AppState.user = { id: data.user_id, name, age, state, district, voter_id: voterid };
+                AppState.eligibility = data.eligibility;
+                AppState.elections = data.elections;
+                AppState.nearestElection = data.nearest_election;
+                AppState.checklist = data.checklist;
+                AppState.guidance = data.guidance;
+                
+                const greetingStr = t('chat_greeting').replace('{name}', name);
+                document.getElementById('chat-greeting').innerText = greetingStr;
+                
+                renderDashboard();
+                goToScreen('dashboard');
+            }
+        }
+
+        // ============================================
+        // DASHBOARD RENDER
+        // ============================================
+        function renderDashboard() {
+            document.getElementById('dash-welcome').innerText = `${t('welcome')}, ${AppState.user.name}! 🗳️`;
+            document.getElementById('dash-guidance').innerText = AppState.guidance.guidance_message;
+
+            // Eligibility Card
+            const ec = AppState.eligibility;
+            document.getElementById('eligibility-icon').innerText = ec.eligible ? '✅' : '⏳';
+            document.getElementById('eligibility-title').innerText = ec.category.replace(/_/g, ' ').toUpperCase();
+            document.getElementById('eligibility-msg').innerText = ec.message;
+            
+            const actionsDiv = document.getElementById('eligibility-actions');
+            actionsDiv.innerHTML = ec.next_steps.map(s => `<span class="inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full mr-2 mb-2 border border-gray-200">${s}</span>`).join('');
+
+            // Elections List
+            const listDiv = document.getElementById('elections-list');
+            listDiv.innerHTML = '';
+            if(AppState.elections.length === 0) {
+                listDiv.innerHTML = `<p class="text-gray-500">No upcoming elections found.</p>`;
+            } else {
+                AppState.elections.forEach(el => {
+                    const html = `
+                        <div onclick="openElectionDetail('${el.election_type}')" class="bg-white border border-gray-200 rounded-xl p-4 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow">
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-lg">${el.title}</h4>
+                                <p class="text-sm text-gray-500">${el.description}</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-orange-100 text-orange-800 text-xs font-bold px-2 py-1 rounded-full">${el.countdown_text}</span>
+                                <div class="text-gray-400 mt-1">&rarr;</div>
+                            </div>
+                        </div>
+                    `;
+                    listDiv.innerHTML += html;
+                });
+            }
+
+            renderChecklist();
+        }
+
+        function renderChecklist() {
+            const cl = AppState.checklist.items || {};
+            const listDiv = document.getElementById('checklist-items');
+            listDiv.innerHTML = '';
+            let completed = 0;
+            let total = 0;
+            
+            for(const [key, val] of Object.entries(cl)) {
+                total++;
+                if(val.completed) completed++;
+                const html = `
+                    <label class="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer border border-transparent hover:border-gray-100 transition-colors">
+                        <input type="checkbox" class="mt-1 w-5 h-5 text-orange-500 focus-ring rounded" 
+                               ${val.completed ? 'checked' : ''} onchange="toggleChecklist('${key}', this.checked)">
+                        <span class="${val.completed ? 'text-gray-400 line-through' : 'text-gray-700 font-medium'}">${val.title}</span>
+                    </label>
+                `;
+                listDiv.innerHTML += html;
+            }
+            
+            document.getElementById('checklist-status').innerText = `${completed} of ${total} completed`;
+            const pct = total > 0 ? (completed / total) * 100 : 0;
+            const circ = 251.2;
+            const offset = circ - (pct / 100) * circ;
+            document.getElementById('checklist-ring').style.strokeDashoffset = offset;
+        }
+
+        async function toggleChecklist(itemId, isChecked) {
+            AppState.checklist.items[itemId].completed = isChecked;
+            renderChecklist();
+            await apiCall('PUT', '/api/checklist', {
+                user_id: AppState.user.id,
+                item_id: itemId,
+                completed: isChecked
+            });
+        }
+
+        // ============================================
+        // CHARTS & MAPS
+        // ============================================
+        async function initChart() {
+            if(AppState.chartLoaded) return;
+            const data = await apiCall('GET', `/api/stats?state=${AppState.user.state}&language=${AppState.language}`);
+            if(data && data.national_turnout) {
+                const ctx = document.getElementById('turnoutChart').getContext('2d');
+                const labels = data.national_turnout.map(d => d.year.toString());
+                const vals = data.national_turnout.map(d => d.percentage);
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'National Turnout %',
+                            data: vals,
+                            backgroundColor: '#FF6B35',
+                            borderRadius: 6
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                });
+                AppState.chartLoaded = true;
+            }
+        }
+
+        function openBoothFinder() {
+            goToScreen('election-detail');
+            setTimeout(loadBoothMap, 300);
+        }
+
+        async function loadBoothMap() {
+            const mapContainer = document.getElementById('map-container');
+            const listDiv = document.getElementById('booth-list');
+            const btn = document.getElementById('btn-load-map');
+            
+            btn.innerText = "Searching...";
+            btn.disabled = true;
+            
+            const data = await apiCall('GET', `/api/polling-booth?district=${AppState.user.district}&state=${AppState.user.state}&language=${AppState.language}`);
+            
+            btn.style.display = 'none';
+            listDiv.innerHTML = '';
+            
+            if(data && data.booths && data.booths.length > 0) {
+                data.booths.forEach(b => {
+                    listDiv.innerHTML += `
+                        <div class="p-3 border border-gray-200 rounded-lg bg-gray-50 flex justify-between items-center">
+                            <div><h4 class="font-bold text-gray-800">${b.name}</h4><p class="text-xs text-gray-500">${b.address}</p></div>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=${b.latitude},${b.longitude}" target="_blank" class="text-orange-500 font-bold whitespace-nowrap text-sm px-2">Directions &nearr;</a>
+                        </div>
+                    `;
+                });
+            } else {
+                listDiv.innerHTML = `<p class="text-gray-500 italic">No booths found nearby. Please check electoralsearch.in</p>`;
+            }
+        }
+
+        // ============================================
+        // ELECTION DETAIL
+        // ============================================
+        async function openElectionDetail(type) {
+            showLoading(true);
+            const data = await apiCall('GET', `/api/election/${type}?state=${AppState.user.state}&user_id=${AppState.user.id}&language=${AppState.language}`);
+            showLoading(false);
+            if(data) {
+                document.getElementById('detail-title').innerText = data.election.title;
+                document.getElementById('detail-full-title').innerText = data.election.title;
+                document.getElementById('detail-desc').innerText = data.election.description;
+                document.getElementById('detail-countdown').innerText = data.election.countdown_text || "Upcoming";
+                
+                const acc = document.getElementById('process-accordion');
+                acc.innerHTML = '';
+                if(data.process && data.process.steps) {
+                    data.process.steps.forEach((s, idx) => {
+                        const tip = s.personalized_tip ? `<div class="mt-3 bg-blue-50 p-3 rounded-lg border border-blue-100 text-sm text-blue-800"><span class="font-bold">✨ Tip for you:</span> ${s.personalized_tip}</div>` : '';
+                        
+                        acc.innerHTML += `
+                            <details class="group border border-gray-200 rounded-xl bg-white overflow-hidden" ${idx===0?'open':''}>
+                                <summary class="font-bold text-gray-800 p-4 cursor-pointer bg-gray-50 group-open:bg-orange-50 group-open:text-orange-800 hover:bg-gray-100 transition-colors list-none flex justify-between items-center">
+                                    <span>${s.step_number}. ${s.title}</span>
+                                    <span class="group-open:rotate-180 transition-transform">&darr;</span>
+                                </summary>
+                                <div class="p-4 text-gray-600 text-sm border-t border-gray-100">
+                                    <p>${s.description}</p>
+                                    ${tip}
+                                </div>
+                            </details>
+                        `;
+                    });
+                }
+                
+                document.getElementById('btn-load-map').style.display = 'block';
+                document.getElementById('btn-load-map').innerText = t('btn_load_map');
+                document.getElementById('btn-load-map').disabled = false;
+                document.getElementById('map-container').classList.add('hidden');
+                document.getElementById('booth-list').innerHTML = '';
+                
+                goToScreen('election-detail');
+            }
+        }
+
+        // ============================================
+        // SIMULATOR
+        // ============================================
+        async function loadSimulator() {
+            showLoading(true);
+            const data = await apiCall('GET', `/api/simulate?language=${AppState.language}`);
+            showLoading(false);
+            if(data && data.scenarios) {
+                AppState.simulatorScenarios = data.scenarios;
+                simRestart();
+                goToScreen('simulator');
+            }
+        }
+
+        function simRestart() {
+            AppState.simStep = 0;
+            AppState.simScore = 0;
+            document.getElementById('sim-score').setAttribute('hidden', '');
+            renderSimStep();
+        }
+
+        function renderSimStep() {
+            if(AppState.simStep >= AppState.simulatorScenarios.length) {
+                // Show score
+                document.getElementById('sim-container').children[0].style.display = 'none'; // hide prog
+                document.getElementById('sim-step-text').style.display = 'none';
+                document.getElementById('sim-scenario-text').style.display = 'none';
+                document.getElementById('sim-options').style.display = 'none';
+                document.getElementById('sim-feedback').setAttribute('hidden', '');
+                
+                document.getElementById('sim-score').removeAttribute('hidden');
+                document.getElementById('sim-score-val').innerText = AppState.simScore;
+                document.getElementById('sim-score-msg').innerText = AppState.simScore >= 5 ? "You're well prepared for election day." : "Keep learning and try again!";
+                return;
+            }
+            
+            const sc = AppState.simulatorScenarios[AppState.simStep];
+            const pct = ((AppState.simStep) / AppState.simulatorScenarios.length) * 100;
+            document.getElementById('sim-progress').style.width = `${pct}%`;
+            
+            document.getElementById('sim-step-text').style.display = 'block';
+            document.getElementById('sim-step-text').innerText = `Step ${AppState.simStep + 1} of ${AppState.simulatorScenarios.length}`;
+            
+            document.getElementById('sim-scenario-text').style.display = 'block';
+            document.getElementById('sim-scenario-text').innerText = sc.scenario_text;
+            
+            const optsDiv = document.getElementById('sim-options');
+            optsDiv.style.display = 'block';
+            optsDiv.innerHTML = '';
+            sc.options.forEach(opt => {
+                optsDiv.innerHTML += `<button id="sim-opt-${opt.id}" onclick="simSelectOpt(${sc.id}, ${opt.id})" class="w-full text-left p-4 rounded-xl border-2 border-gray-200 hover:border-orange-400 hover:bg-orange-50 font-medium text-gray-700 transition-colors">${opt.text}</button>`;
+            });
+            
+            document.getElementById('sim-feedback').setAttribute('hidden', '');
+        }
+
+        async function simSelectOpt(scId, optId) {
+            // Disable all options
+            const optsDiv = document.getElementById('sim-options');
+            Array.from(optsDiv.children).forEach(b => b.disabled = true);
+            
+            const data = await apiCall('POST', `/api/simulate/check?scenario_id=${scId}&selected_option=${optId}&language=${AppState.language}`);
+            if(data) {
+                if(data.is_correct) AppState.simScore++;
+                
+                // Highlight correct/incorrect
+                const selBtn = document.getElementById(`sim-opt-${optId}`);
+                if(data.is_correct) {
+                    selBtn.classList.replace('border-gray-200', 'border-green-500');
+                    selBtn.classList.replace('hover:border-orange-400', 'bg-green-50');
+                } else {
+                    selBtn.classList.replace('border-gray-200', 'border-red-500');
+                    selBtn.classList.replace('hover:border-orange-400', 'bg-red-50');
+                    const corrBtn = document.getElementById(`sim-opt-${data.correct_option_id}`);
+                    if(corrBtn) {
+                        corrBtn.classList.replace('border-gray-200', 'border-green-500');
+                        corrBtn.classList.add('bg-green-50');
+                    }
+                }
+                
+                const fbDiv = document.getElementById('sim-feedback');
+                fbDiv.removeAttribute('hidden');
+                fbDiv.className = `mt-8 p-6 rounded-xl slide-up ${data.is_correct ? 'bg-green-100' : 'bg-red-100'}`;
+                document.getElementById('sim-fb-icon').innerText = data.is_correct ? '✅' : '❌';
+                document.getElementById('sim-fb-title').innerText = data.is_correct ? 'Correct!' : 'Not quite.';
+                document.getElementById('sim-fb-text').innerText = data.feedback;
+            }
+        }
+
+        function simNextStep() {
+            AppState.simStep++;
+            renderSimStep();
+        }
+
+        // Override goToScreen for simulator
+        const origGoToScreen = goToScreen;
+        goToScreen = function(id) {
+            if(id === 'simulator') {
+                if(AppState.simulatorScenarios.length === 0) {
+                    loadSimulator();
+                    return;
+                }
+            }
+            origGoToScreen(id);
+        }
+
+        // ============================================
+        // CHAT WIDGET
+        // ============================================
+        function toggleChat() {
+            const panel = document.getElementById('chat-panel');
+            if(panel.hasAttribute('hidden')) {
+                panel.removeAttribute('hidden');
+                document.getElementById('chat-input').focus();
+            } else {
+                panel.setAttribute('hidden', '');
+            }
+        }
+
+        function addChatMsg(text, isUser) {
+            const div = document.createElement('div');
+            div.className = `chat-msg ${isUser ? 'user' : 'assistant'}`;
+            div.innerText = text;
+            const container = document.getElementById('chat-messages');
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        async function sendChat() {
+            const input = document.getElementById('chat-input');
+            const msg = input.value.trim();
+            if(!msg) return;
+            
+            input.value = '';
+            addChatMsg(msg, true);
+            
+            const typing = document.createElement('div');
+            typing.className = 'chat-msg assistant text-gray-400 italic text-sm';
+            typing.id = 'typing-indicator';
+            typing.innerText = 'Thinking...';
+            document.getElementById('chat-messages').appendChild(typing);
+            
+            const data = await apiCall('POST', '/api/chat', {
+                message: msg,
+                user_id: AppState.user?.id,
+                language: AppState.language,
+                context_screen: AppState.currentScreen
+            });
+            
+            document.getElementById('typing-indicator').remove();
+            
+            if(data) {
+                addChatMsg(data.response, false);
+                if(data.suggestions && data.suggestions.length > 0) {
+                    const suggDiv = document.createElement('div');
+                    suggDiv.className = 'flex flex-wrap gap-2 mt-2';
+                    data.suggestions.forEach(s => {
+                        const btn = document.createElement('button');
+                        btn.className = 'text-xs bg-white border border-orange-200 text-orange-600 rounded-full px-3 py-1 hover:bg-orange-50';
+                        btn.innerText = s;
+                        btn.onclick = () => {
+                            input.value = s;
+                            sendChat();
+                        };
+                        suggDiv.appendChild(btn);
+                    });
+                    document.getElementById('chat-messages').appendChild(suggDiv);
+                    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+                }
+                
+                if(data.booth_finder) openBoothFinder();
+                if(data.simulator) goToScreen('simulator');
+            }
+        }
+
+        function shareApp() {
+            const text = encodeURIComponent("Hey! I'm getting ready to vote using VoteReady. Check your election readiness too! 🗳️ https://voteready.example.com");
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        // ============================================
+        // INIT
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const lf = localStorage.getItem('vr_largeFont') === 'true';
+            if(lf) toggleFontSize();
+            
+            const hc = localStorage.getItem('vr_highContrast') === 'true';
+            if(hc) toggleHighContrast();
+            
+            updateUIText();
+        });
+    </script>
+</body>
+</html>
