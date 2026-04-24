@@ -37,10 +37,10 @@ class Orchestrator:
     
     KEYWORD_MAP = {
         IntentCategory.ELIGIBILITY: ["eligible", "eligibility", "can i vote", "age", "पात्र", "पात्रता"],
-        IntentCategory.PROCESS: ["how to vote", "voting process", "election process", "steps", "procedure", "evm", "vvpat", "polling", "booth process", "मतदान प्रक्रिया", "कैसे वोट करें"],
+        IntentCategory.POLLING_BOOTH: ["booth", "where to vote", "polling station", "location", "find booth", "nearest", "बूथ", "कहां वोट"],
+        IntentCategory.PROCESS: ["how to vote", "voting process", "election process", "steps", "procedure", "evm", "vvpat", "polling procedure", "मतदान प्रक्रिया", "कैसे वोट करें"],
         IntentCategory.TIMELINE: ["when", "date", "schedule", "next election", "upcoming", "timeline", "कब", "तारीख", "अगला चुनाव"],
         IntentCategory.REGISTRATION: ["register", "registration", "voter id", "epic", "form 6", "nri vote", "nvsp", "apply", "new voter", "पंजीकरण", "मतदाता पहचान"],
-        IntentCategory.POLLING_BOOTH: ["booth", "where to vote", "polling station", "location", "find booth", "nearest", "बूथ", "कहां वोट"],
         IntentCategory.SIMULATOR: ["simulate", "practice", "mock", "election day", "what happens", "try voting", "अभ्यास"],
     }
     

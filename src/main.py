@@ -75,7 +75,7 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
             "https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
             "img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com; "
-            "connect-src 'self'; "
+            "connect-src 'self' https://cdn.jsdelivr.net; "
             "frame-src https://www.google.com https://maps.google.com;"
         )
         response.headers["X-Content-Type-Options"] = "nosniff"

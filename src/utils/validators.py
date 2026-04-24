@@ -73,12 +73,20 @@ def is_safe_input(text: str) -> bool:
     Returns:
         bool: True if safe, False if potentially dangerous.
     """
+    if not text or len(text) > 500:
+        return False
+        
     dangerous_patterns = [
         r'<script.*?>.*?</script>',
         r'javascript:',
+        r'on\w+\s*=',  # Event handlers like onerror=, onclick=
         r'UNION SELECT',
         r'DROP TABLE',
+        r'OR\s+1\s*=\s*1',
         r'Ignore previous instructions',
+        r'SYSTEM:',
+        r'developer mode',
+        r'ignore all instructions'
     ]
     
     for pattern in dangerous_patterns:
