@@ -1,0 +1,542 @@
+[
+  {
+    "name": "Andhra Pradesh",
+    "name_hi": "आंध्र प्रदेश",
+    "code": "AP",
+    "capital": "Amaravati",
+    "lok_sabha_seats": 25,
+    "vidhan_sabha_seats": 175,
+    "districts": [
+      "Visakhapatnam",
+      "Vijayawada",
+      "Guntur",
+      "Nellore",
+      "Kurnool"
+    ]
+  },
+  {
+    "name": "Arunachal Pradesh",
+    "name_hi": "अरुणाचल प्रदेश",
+    "code": "AR",
+    "capital": "Itanagar",
+    "lok_sabha_seats": 2,
+    "vidhan_sabha_seats": 60,
+    "districts": [
+      "Tawang",
+      "West Kameng",
+      "East Kameng",
+      "Papum Pare",
+      "Kurung Kumey"
+    ]
+  },
+  {
+    "name": "Assam",
+    "name_hi": "असम",
+    "code": "AS",
+    "capital": "Dispur",
+    "lok_sabha_seats": 14,
+    "vidhan_sabha_seats": 126,
+    "districts": [
+      "Kamrup Metropolitan",
+      "Nagaon",
+      "Sonitpur",
+      "Dibrugarh",
+      "Cachar"
+    ]
+  },
+  {
+    "name": "Bihar",
+    "name_hi": "बिहार",
+    "code": "BR",
+    "capital": "Patna",
+    "lok_sabha_seats": 40,
+    "vidhan_sabha_seats": 243,
+    "districts": [
+      "Patna",
+      "Gaya",
+      "Bhagalpur",
+      "Muzaffarpur",
+      "Purnia"
+    ]
+  },
+  {
+    "name": "Chhattisgarh",
+    "name_hi": "छत्तीसगढ़",
+    "code": "CT",
+    "capital": "Raipur",
+    "lok_sabha_seats": 11,
+    "vidhan_sabha_seats": 90,
+    "districts": [
+      "Raipur",
+      "Bhilai",
+      "Bilaspur",
+      "Korba",
+      "Durg"
+    ]
+  },
+  {
+    "name": "Goa",
+    "name_hi": "गोवा",
+    "code": "GA",
+    "capital": "Panaji",
+    "lok_sabha_seats": 2,
+    "vidhan_sabha_seats": 40,
+    "districts": [
+      "North Goa",
+      "South Goa",
+      "Panaji",
+      "Margao",
+      "Vasco da Gama"
+    ]
+  },
+  {
+    "name": "Gujarat",
+    "name_hi": "गुजरात",
+    "code": "GJ",
+    "capital": "Gandhinagar",
+    "lok_sabha_seats": 26,
+    "vidhan_sabha_seats": 182,
+    "districts": [
+      "Ahmedabad",
+      "Surat",
+      "Vadodara",
+      "Rajkot",
+      "Bhavnagar"
+    ]
+  },
+  {
+    "name": "Haryana",
+    "name_hi": "हरियाणा",
+    "code": "HR",
+    "capital": "Chandigarh",
+    "lok_sabha_seats": 10,
+    "vidhan_sabha_seats": 90,
+    "districts": [
+      "Gurugram",
+      "Faridabad",
+      "Panipat",
+      "Ambala",
+      "Rohtak"
+    ]
+  },
+  {
+    "name": "Himachal Pradesh",
+    "name_hi": "हिमाचल प्रदेश",
+    "code": "HP",
+    "capital": "Shimla",
+    "lok_sabha_seats": 4,
+    "vidhan_sabha_seats": 68,
+    "districts": [
+      "Shimla",
+      "Kangra",
+      "Mandi",
+      "Solan",
+      "Kullu"
+    ]
+  },
+  {
+    "name": "Jharkhand",
+    "name_hi": "झारखंड",
+    "code": "JH",
+    "capital": "Ranchi",
+    "lok_sabha_seats": 14,
+    "vidhan_sabha_seats": 81,
+    "districts": [
+      "Ranchi",
+      "Dhanbad",
+      "Jamshedpur",
+      "Bokaro",
+      "Hazaribagh"
+    ]
+  },
+  {
+    "name": "Karnataka",
+    "name_hi": "कर्नाटक",
+    "code": "KA",
+    "capital": "Bengaluru",
+    "lok_sabha_seats": 28,
+    "vidhan_sabha_seats": 224,
+    "districts": [
+      "Bengaluru Urban",
+      "Mysuru",
+      "Hubballi",
+      "Mangaluru",
+      "Belagavi"
+    ]
+  },
+  {
+    "name": "Kerala",
+    "name_hi": "केरल",
+    "code": "KL",
+    "capital": "Thiruvananthapuram",
+    "lok_sabha_seats": 20,
+    "vidhan_sabha_seats": 140,
+    "districts": [
+      "Thiruvananthapuram",
+      "Ernakulam",
+      "Kozhikode",
+      "Thrissur",
+      "Kollam"
+    ]
+  },
+  {
+    "name": "Madhya Pradesh",
+    "name_hi": "मध्य प्रदेश",
+    "code": "MP",
+    "capital": "Bhopal",
+    "lok_sabha_seats": 29,
+    "vidhan_sabha_seats": 230,
+    "districts": [
+      "Bhopal",
+      "Indore",
+      "Jabalpur",
+      "Gwalior",
+      "Ujjain"
+    ]
+  },
+  {
+    "name": "Maharashtra",
+    "name_hi": "महाराष्ट्र",
+    "code": "MH",
+    "capital": "Mumbai",
+    "lok_sabha_seats": 48,
+    "vidhan_sabha_seats": 288,
+    "districts": [
+      "Mumbai City",
+      "Pune",
+      "Nagpur",
+      "Thane",
+      "Nashik"
+    ]
+  },
+  {
+    "name": "Manipur",
+    "name_hi": "मणिपुर",
+    "code": "MN",
+    "capital": "Imphal",
+    "lok_sabha_seats": 2,
+    "vidhan_sabha_seats": 60,
+    "districts": [
+      "Imphal West",
+      "Imphal East",
+      "Thoubal",
+      "Bishnupur",
+      "Churachandpur"
+    ]
+  },
+  {
+    "name": "Meghalaya",
+    "name_hi": "मेघालय",
+    "code": "ML",
+    "capital": "Shillong",
+    "lok_sabha_seats": 2,
+    "vidhan_sabha_seats": 60,
+    "districts": [
+      "East Khasi Hills",
+      "West Garo Hills",
+      "Jaintia Hills",
+      "Ri Bhoi",
+      "South Garo Hills"
+    ]
+  },
+  {
+    "name": "Mizoram",
+    "name_hi": "मिजोरम",
+    "code": "MZ",
+    "capital": "Aizawl",
+    "lok_sabha_seats": 1,
+    "vidhan_sabha_seats": 40,
+    "districts": [
+      "Aizawl",
+      "Lunglei",
+      "Champhai",
+      "Kolasib",
+      "Serchhip"
+    ]
+  },
+  {
+    "name": "Nagaland",
+    "name_hi": "नागालैंड",
+    "code": "NL",
+    "capital": "Kohima",
+    "lok_sabha_seats": 1,
+    "vidhan_sabha_seats": 60,
+    "districts": [
+      "Kohima",
+      "Dimapur",
+      "Mokokchung",
+      "Tuensang",
+      "Wokha"
+    ]
+  },
+  {
+    "name": "Odisha",
+    "name_hi": "ओडिशा",
+    "code": "OR",
+    "capital": "Bhubaneswar",
+    "lok_sabha_seats": 21,
+    "vidhan_sabha_seats": 147,
+    "districts": [
+      "Khordha",
+      "Cuttack",
+      "Ganjam",
+      "Puri",
+      "Sundergarh"
+    ]
+  },
+  {
+    "name": "Punjab",
+    "name_hi": "पंजाब",
+    "code": "PB",
+    "capital": "Chandigarh",
+    "lok_sabha_seats": 13,
+    "vidhan_sabha_seats": 117,
+    "districts": [
+      "Ludhiana",
+      "Amritsar",
+      "Jalandhar",
+      "Patiala",
+      "Bathinda"
+    ]
+  },
+  {
+    "name": "Rajasthan",
+    "name_hi": "राजस्थान",
+    "code": "RJ",
+    "capital": "Jaipur",
+    "lok_sabha_seats": 25,
+    "vidhan_sabha_seats": 200,
+    "districts": [
+      "Jaipur",
+      "Jodhpur",
+      "Udaipur",
+      "Kota",
+      "Ajmer"
+    ]
+  },
+  {
+    "name": "Sikkim",
+    "name_hi": "सिक्किम",
+    "code": "SK",
+    "capital": "Gangtok",
+    "lok_sabha_seats": 1,
+    "vidhan_sabha_seats": 32,
+    "districts": [
+      "Gangtok",
+      "Namchi",
+      "Mangan",
+      "Gyalshing",
+      "Pakyong"
+    ]
+  },
+  {
+    "name": "Tamil Nadu",
+    "name_hi": "तमिलनाडु",
+    "code": "TN",
+    "capital": "Chennai",
+    "lok_sabha_seats": 39,
+    "vidhan_sabha_seats": 234,
+    "districts": [
+      "Chennai",
+      "Coimbatore",
+      "Madurai",
+      "Tiruchirappalli",
+      "Salem"
+    ]
+  },
+  {
+    "name": "Telangana",
+    "name_hi": "तेलंगाना",
+    "code": "TG",
+    "capital": "Hyderabad",
+    "lok_sabha_seats": 17,
+    "vidhan_sabha_seats": 119,
+    "districts": [
+      "Hyderabad",
+      "Ranga Reddy",
+      "Medchal-Malkajgiri",
+      "Nizamabad",
+      "Karimnagar"
+    ]
+  },
+  {
+    "name": "Tripura",
+    "name_hi": "त्रिपुरा",
+    "code": "TR",
+    "capital": "Agartala",
+    "lok_sabha_seats": 2,
+    "vidhan_sabha_seats": 60,
+    "districts": [
+      "West Tripura",
+      "Gomati",
+      "South Tripura",
+      "Dhalai",
+      "North Tripura"
+    ]
+  },
+  {
+    "name": "Uttar Pradesh",
+    "name_hi": "उत्तर प्रदेश",
+    "code": "UP",
+    "capital": "Lucknow",
+    "lok_sabha_seats": 80,
+    "vidhan_sabha_seats": 403,
+    "districts": [
+      "Lucknow",
+      "Kanpur",
+      "Varanasi",
+      "Agra",
+      "Prayagraj"
+    ]
+  },
+  {
+    "name": "Uttarakhand",
+    "name_hi": "उत्तराखंड",
+    "code": "UK",
+    "capital": "Dehradun",
+    "lok_sabha_seats": 5,
+    "vidhan_sabha_seats": 70,
+    "districts": [
+      "Dehradun",
+      "Haridwar",
+      "Nainital",
+      "Udham Singh Nagar",
+      "Pauri Garhwal"
+    ]
+  },
+  {
+    "name": "West Bengal",
+    "name_hi": "पश्चिम बंगाल",
+    "code": "WB",
+    "capital": "Kolkata",
+    "lok_sabha_seats": 42,
+    "vidhan_sabha_seats": 294,
+    "districts": [
+      "Kolkata",
+      "Howrah",
+      "Darjeeling",
+      "Hooghly",
+      "North 24 Parganas"
+    ]
+  },
+  {
+    "name": "Andaman and Nicobar Islands",
+    "name_hi": "अंडमान और निकोबार द्वीप समूह",
+    "code": "AN",
+    "capital": "Port Blair",
+    "lok_sabha_seats": 1,
+    "vidhan_sabha_seats": 0,
+    "districts": [
+      "North and Middle Andaman",
+      "South Andaman",
+      "Nicobar",
+      "Port Blair",
+      "Havelock"
+    ]
+  },
+  {
+    "name": "Chandigarh",
+    "name_hi": "चंडीगढ़",
+    "code": "CH",
+    "capital": "Chandigarh",
+    "lok_sabha_seats": 1,
+    "vidhan_sabha_seats": 0,
+    "districts": [
+      "Chandigarh North",
+      "Chandigarh South",
+      "Chandigarh East",
+      "Chandigarh West",
+      "Central Chandigarh"
+    ]
+  },
+  {
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "name_hi": "दादरा और नगर हवेली और दमन और दीव",
+    "code": "DN",
+    "capital": "Daman",
+    "lok_sabha_seats": 2,
+    "vidhan_sabha_seats": 0,
+    "districts": [
+      "Daman",
+      "Diu",
+      "Dadra",
+      "Nagar Haveli",
+      "Silvassa"
+    ]
+  },
+  {
+    "name": "Delhi",
+    "name_hi": "दिल्ली",
+    "code": "DL",
+    "capital": "New Delhi",
+    "lok_sabha_seats": 7,
+    "vidhan_sabha_seats": 70,
+    "districts": [
+      "New Delhi",
+      "South Delhi",
+      "North West Delhi",
+      "East Delhi",
+      "Central Delhi"
+    ]
+  },
+  {
+    "name": "Jammu and Kashmir",
+    "name_hi": "जम्मू और कश्मीर",
+    "code": "JK",
+    "capital": "Srinagar",
+    "lok_sabha_seats": 5,
+    "vidhan_sabha_seats": 90,
+    "districts": [
+      "Srinagar",
+      "Jammu",
+      "Anantnag",
+      "Baramulla",
+      "Kupwara"
+    ]
+  },
+  {
+    "name": "Ladakh",
+    "name_hi": "लद्दाख",
+    "code": "LA",
+    "capital": "Leh",
+    "lok_sabha_seats": 1,
+    "vidhan_sabha_seats": 0,
+    "districts": [
+      "Leh",
+      "Kargil",
+      "Nubra",
+      "Zanskar",
+      "Drass"
+    ]
+  },
+  {
+    "name": "Lakshadweep",
+    "name_hi": "लक्षद्वीप",
+    "code": "LD",
+    "capital": "Kavaratti",
+    "lok_sabha_seats": 1,
+    "vidhan_sabha_seats": 0,
+    "districts": [
+      "Kavaratti",
+      "Agatti",
+      "Amini",
+      "Andrott",
+      "Minicoy"
+    ]
+  },
+  {
+    "name": "Puducherry",
+    "name_hi": "पुडुचेरी",
+    "code": "PY",
+    "capital": "Puducherry",
+    "lok_sabha_seats": 1,
+    "vidhan_sabha_seats": 30,
+    "districts": [
+      "Puducherry",
+      "Karaikal",
+      "Mahe",
+      "Yanam",
+      "Ozhukarai"
+    ]
+  }
+]

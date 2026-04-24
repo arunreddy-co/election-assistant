@@ -1,0 +1,49 @@
+{
+  "criteria": [
+    {
+      "field": "age",
+      "operator": ">=",
+      "value": 18
+    },
+    {
+      "field": "citizenship",
+      "operator": "==",
+      "value": "Indian"
+    }
+  ],
+  "required_documents": [
+    {
+      "name": "Age Proof",
+      "name_hi": "आयु प्रमाण",
+      "description": "Birth certificate, 10th standard mark sheet, PAN Card, or Aadhaar.",
+      "mandatory": true
+    },
+    {
+      "name": "Address Proof",
+      "name_hi": "पते का प्रमाण",
+      "description": "Electricity bill, water bill, Aadhaar, Passport, or Bank Passbook.",
+      "mandatory": true
+    },
+    {
+      "name": "Passport Size Photo",
+      "name_hi": "पासपोर्ट साइज फोटो",
+      "description": "Recent color photograph with white background.",
+      "mandatory": true
+    }
+  ],
+  "special_cases": {
+    "nri": {
+      "process": "Use Form 6A to register as an overseas elector.",
+      "link": "https://voters.eci.gov.in/"
+    },
+    "first_time_voter": {
+      "guidance": "Welcome! Make sure to fill Form 6. You can apply if you turn 18 on 1st Jan, 1st Apr, 1st Jul, or 1st Oct."
+    },
+    "under_18": {
+      "info": "You can pre-register if you are 17+ years old. Your card will be issued when you turn 18."
+    },
+    "address_changed": {
+      "process": "Use Form 8 to shift your constituency or update your address."
+    }
+  }
+}

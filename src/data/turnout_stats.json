@@ -1,0 +1,404 @@
+{
+  "national_turnout": [
+    {
+      "year": 2014,
+      "percentage": 66.44,
+      "total_voters": 834000000,
+      "votes_cast": 554000000
+    },
+    {
+      "year": 2019,
+      "percentage": 67.4,
+      "total_voters": 911000000,
+      "votes_cast": 614000000
+    },
+    {
+      "year": 2024,
+      "percentage": 66.33,
+      "total_voters": 968000000,
+      "votes_cast": 642000000
+    }
+  ],
+  "state_turnout": {
+    "Telangana": [
+      {
+        "year": 2014,
+        "percentage": 69.5
+      },
+      {
+        "year": 2018,
+        "percentage": 73.2
+      },
+      {
+        "year": 2023,
+        "percentage": 71.3
+      }
+    ],
+    "Maharashtra": [
+      {
+        "year": 2014,
+        "percentage": 63.38
+      },
+      {
+        "year": 2019,
+        "percentage": 61.4
+      },
+      {
+        "year": 2024,
+        "percentage": 61.3
+      }
+    ],
+    "Uttar Pradesh": [
+      {
+        "year": 2014,
+        "percentage": 70.89
+      },
+      {
+        "year": 2019,
+        "percentage": 72.89
+      },
+      {
+        "year": 2024,
+        "percentage": 70.68
+      }
+    ],
+    "Tamil Nadu": [
+      {
+        "year": 2014,
+        "percentage": 75.44
+      },
+      {
+        "year": 2019,
+        "percentage": 77.3
+      },
+      {
+        "year": 2024,
+        "percentage": 72.08
+      }
+    ],
+    "Kerala": [
+      {
+        "year": 2014,
+        "percentage": 66.56
+      },
+      {
+        "year": 2019,
+        "percentage": 68.31
+      },
+      {
+        "year": 2024,
+        "percentage": 67.46
+      }
+    ],
+    "Karnataka": [
+      {
+        "year": 2014,
+        "percentage": 59.33
+      },
+      {
+        "year": 2019,
+        "percentage": 62.13
+      },
+      {
+        "year": 2024,
+        "percentage": 59.71
+      }
+    ],
+    "West Bengal": [
+      {
+        "year": 2014,
+        "percentage": 64.77
+      },
+      {
+        "year": 2019,
+        "percentage": 66.65
+      },
+      {
+        "year": 2024,
+        "percentage": 61.43
+      }
+    ],
+    "Bihar": [
+      {
+        "year": 2014,
+        "percentage": 76.91
+      },
+      {
+        "year": 2019,
+        "percentage": 76.48
+      },
+      {
+        "year": 2024,
+        "percentage": 73.74
+      }
+    ],
+    "Rajasthan": [
+      {
+        "year": 2014,
+        "percentage": 78.49
+      },
+      {
+        "year": 2019,
+        "percentage": 78.52
+      },
+      {
+        "year": 2024,
+        "percentage": 76.53
+      }
+    ],
+    "Gujarat": [
+      {
+        "year": 2014,
+        "percentage": 77.36
+      },
+      {
+        "year": 2019,
+        "percentage": 79.18
+      },
+      {
+        "year": 2024,
+        "percentage": 76.87
+      }
+    ],
+    "Madhya Pradesh": [
+      {
+        "year": 2014,
+        "percentage": 72.62
+      },
+      {
+        "year": 2019,
+        "percentage": 71.24
+      },
+      {
+        "year": 2024,
+        "percentage": 69.93
+      }
+    ],
+    "Andhra Pradesh": [
+      {
+        "year": 2014,
+        "percentage": 77.06
+      },
+      {
+        "year": 2019,
+        "percentage": 79.03
+      },
+      {
+        "year": 2024,
+        "percentage": 75.9
+      }
+    ],
+    "Punjab": [
+      {
+        "year": 2014,
+        "percentage": 72.27
+      },
+      {
+        "year": 2019,
+        "percentage": 74.0
+      },
+      {
+        "year": 2024,
+        "percentage": 72.25
+      }
+    ],
+    "Delhi": [
+      {
+        "year": 2014,
+        "percentage": 60.53
+      },
+      {
+        "year": 2019,
+        "percentage": 61.0
+      },
+      {
+        "year": 2024,
+        "percentage": 59.71
+      }
+    ],
+    "Jharkhand": [
+      {
+        "year": 2014,
+        "percentage": 72.17
+      },
+      {
+        "year": 2019,
+        "percentage": 73.19
+      },
+      {
+        "year": 2024,
+        "percentage": 70.55
+      }
+    ],
+    "Odisha": [
+      {
+        "year": 2014,
+        "percentage": 67.09
+      },
+      {
+        "year": 2019,
+        "percentage": 66.93
+      },
+      {
+        "year": 2024,
+        "percentage": 64.78
+      }
+    ],
+    "Assam": [
+      {
+        "year": 2014,
+        "percentage": 64.34
+      },
+      {
+        "year": 2019,
+        "percentage": 63.08
+      },
+      {
+        "year": 2024,
+        "percentage": 61.94
+      }
+    ],
+    "Haryana": [
+      {
+        "year": 2014,
+        "percentage": 80.35
+      },
+      {
+        "year": 2019,
+        "percentage": 81.02
+      },
+      {
+        "year": 2024,
+        "percentage": 79.53
+      }
+    ],
+    "Chhattisgarh": [
+      {
+        "year": 2014,
+        "percentage": 77.96
+      },
+      {
+        "year": 2019,
+        "percentage": 76.77
+      },
+      {
+        "year": 2024,
+        "percentage": 73.99
+      }
+    ],
+    "Uttarakhand": [
+      {
+        "year": 2014,
+        "percentage": 65.38
+      },
+      {
+        "year": 2019,
+        "percentage": 66.15
+      },
+      {
+        "year": 2024,
+        "percentage": 67.08
+      }
+    ]
+  },
+  "age_group_turnout": [
+    {
+      "age_range": "18-25",
+      "percentage": 45.2
+    },
+    {
+      "age_range": "25-40",
+      "percentage": 62.4
+    },
+    {
+      "age_range": "40-60",
+      "percentage": 71.8
+    },
+    {
+      "age_range": "60+",
+      "percentage": 68.9
+    }
+  ],
+  "closest_margins": [
+    {
+      "constituency": "Mumbai North West",
+      "state": "Maharashtra",
+      "year": 2024,
+      "margin_votes": 48,
+      "winner_votes": 452644,
+      "total_votes": 905240
+    },
+    {
+      "constituency": "Attingal",
+      "state": "Kerala",
+      "year": 2024,
+      "margin_votes": 684,
+      "winner_votes": 312705,
+      "total_votes": 1050000
+    },
+    {
+      "constituency": "Arambagh",
+      "state": "West Bengal",
+      "year": 2024,
+      "margin_votes": 850,
+      "winner_votes": 500000,
+      "total_votes": 1000000
+    },
+    {
+      "constituency": "Chandni Chowk",
+      "state": "Delhi",
+      "year": 2024,
+      "margin_votes": 890,
+      "winner_votes": 420500,
+      "total_votes": 850000
+    },
+    {
+      "constituency": "Jaipur Rural",
+      "state": "Rajasthan",
+      "year": 2024,
+      "margin_votes": 125,
+      "winner_votes": 610000,
+      "total_votes": 1220000
+    },
+    {
+      "constituency": "Madurai",
+      "state": "Tamil Nadu",
+      "year": 2024,
+      "margin_votes": 540,
+      "winner_votes": 450123,
+      "total_votes": 900500
+    },
+    {
+      "constituency": "Indore",
+      "state": "Madhya Pradesh",
+      "year": 2019,
+      "margin_votes": 920,
+      "winner_votes": 550000,
+      "total_votes": 1100000
+    },
+    {
+      "constituency": "Patna Sahib",
+      "state": "Bihar",
+      "year": 2024,
+      "margin_votes": 432,
+      "winner_votes": 380432,
+      "total_votes": 760500
+    },
+    {
+      "constituency": "Guntur",
+      "state": "Andhra Pradesh",
+      "year": 2024,
+      "margin_votes": 78,
+      "winner_votes": 510078,
+      "total_votes": 1020000
+    },
+    {
+      "constituency": "Rohtak",
+      "state": "Haryana",
+      "year": 2019,
+      "margin_votes": 89,
+      "winner_votes": 490089,
+      "total_votes": 980000
+    }
+  ]
+}

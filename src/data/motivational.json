@@ -1,0 +1,133 @@
+{
+  "quotes": [
+    {
+      "text": "The ballot is stronger than the bullet.",
+      "text_hi": "बैलेट बुलेट से अधिक मजबूत है।",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "text": "Democracy is not a spectator sport.",
+      "text_hi": "लोकतंत्र कोई दर्शक खेल नहीं है।",
+      "author": "Marian Wright Edelman"
+    },
+    {
+      "text": "Your vote is your voice.",
+      "text_hi": "आपका वोट आपकी आवाज है।",
+      "author": "Unknown"
+    },
+    {
+      "text": "Political democracy cannot last unless there lies at the base of it social democracy.",
+      "text_hi": "राजनीतिक लोकतंत्र तब तक कायम नहीं रह सकता जब तक कि उसके मूल में सामाजिक लोकतंत्र न हो।",
+      "author": "B.R. Ambedkar"
+    },
+    {
+      "text": "A 'No' uttered from the deepest conviction is better than a 'Yes' merely uttered to please.",
+      "text_hi": "गहरी आस्था से बोला गया 'नहीं' केवल खुश करने के लिए बोले गए 'हां' से बेहतर है।",
+      "author": "Mahatma Gandhi"
+    },
+    {
+      "text": "Democracy means good governance, not just casting a vote.",
+      "text_hi": "लोकतंत्र का अर्थ केवल वोट डालना नहीं, बल्कि सुशासन है।",
+      "author": "APJ Abdul Kalam"
+    },
+    {
+      "text": "The people are the roots of the state.",
+      "text_hi": "लोग ही राज्य की जड़ें हैं।",
+      "author": "Jawaharlal Nehru"
+    },
+    {
+      "text": "A vote is the best way of getting the kind of country and the kind of world you want.",
+      "text_hi": "एक वोट उस तरह का देश और उस तरह की दुनिया पाने का सबसे अच्छा तरीका है जो आप चाहते हैं।",
+      "author": "Harry S. Truman"
+    },
+    {
+      "text": "The ignorance of one voter in a democracy impairs the security of all.",
+      "text_hi": "लोकतंत्र में एक मतदाता की अज्ञानता सभी की सुरक्षा को खतरे में डालती है।",
+      "author": "John F. Kennedy"
+    },
+    {
+      "text": "Bad officials are elected by good citizens who do not vote.",
+      "text_hi": "बुरे अधिकारी उन अच्छे नागरिकों द्वारा चुने जाते हैं जो वोट नहीं देते हैं।",
+      "author": "George Jean Nathan"
+    },
+    {
+      "text": "Somewhere inside of all of us is the power to change the world.",
+      "text_hi": "हम सभी के भीतर कहीं न कहीं दुनिया को बदलने की शक्ति है।",
+      "author": "Roald Dahl"
+    }
+  ],
+  "facts": [
+    {
+      "text": "India is the world's largest democracy with over 960 million eligible voters.",
+      "text_hi": "96 करोड़ से अधिक योग्य मतदाताओं के साथ भारत दुनिया का सबसे बड़ा लोकतंत्र है।"
+    },
+    {
+      "text": "The Election Commission of India sets up polling stations at an altitude of over 15,000 feet in Himachal Pradesh.",
+      "text_hi": "भारत निर्वाचन आयोग हिमाचल प्रदेश में 15,000 फीट से अधिक की ऊंचाई पर मतदान केंद्र स्थापित करता है।"
+    },
+    {
+      "text": "The Electronic Voting Machine (EVM) was invented in India and first used in 1982 in Kerala.",
+      "text_hi": "इलेक्ट्रॉनिक वोटिंग मशीन (EVM) का आविष्कार भारत में हुआ था और इसका पहली बार 1982 में केरल में उपयोग किया गया था।"
+    },
+    {
+      "text": "Ladakh is the largest Lok Sabha constituency in India by area, covering over 173,000 square km.",
+      "text_hi": "क्षेत्रफल के हिसाब से लद्दाख भारत का सबसे बड़ा लोकसभा क्षेत्र है, जो 173,000 वर्ग किमी से अधिक में फैला है।"
+    },
+    {
+      "text": "Lakshadweep is the smallest Lok Sabha constituency by number of voters.",
+      "text_hi": "मतदाताओं की संख्या के हिसाब से लक्षद्वीप सबसे छोटा लोकसभा क्षेत्र है।"
+    },
+    {
+      "text": "India's first general election in 1951-52 took four months to complete.",
+      "text_hi": "1951-52 में भारत के पहले आम चुनाव को पूरा होने में चार महीने लगे थे।"
+    },
+    {
+      "text": "In recent elections, women's voter turnout has frequently surpassed men's turnout.",
+      "text_hi": "हाल के चुनावों में, महिलाओं का मतदान प्रतिशत अक्सर पुरुषों के मतदान प्रतिशत से अधिक रहा है।"
+    },
+    {
+      "text": "During the 2024 elections, over 1.05 million polling stations were set up across the country.",
+      "text_hi": "2024 के चुनावों के दौरान, देश भर में 1.05 मिलियन से अधिक मतदान केंद्र स्थापित किए गए थे।"
+    },
+    {
+      "text": "The Election Commission sets up a polling booth in Gir forest for just a single voter.",
+      "text_hi": "चुनाव आयोग केवल एक मतदाता के लिए गिर जंगल में एक मतदान केंद्र स्थापित करता है।"
+    },
+    {
+      "text": "General elections in India are the largest democratic exercises in human history.",
+      "text_hi": "भारत में आम चुनाव मानव इतिहास में सबसे बड़े लोकतांत्रिक अभ्यास हैं।"
+    },
+    {
+      "text": "NOTA (None of the Above) was introduced in India in 2013.",
+      "text_hi": "भारत में NOTA (इनमें से कोई नहीं) की शुरुआत 2013 में हुई थी।"
+    }
+  ],
+  "youth_messages": [
+    {
+      "text": "Be the change you want to see. Your first vote shapes the next five years.",
+      "text_hi": "वह बदलाव बनें जो आप देखना चाहते हैं। आपका पहला वोट अगले पांच वर्षों को आकार देता है।"
+    },
+    {
+      "text": "Don't let others decide your future. Step out and cast your vote.",
+      "text_hi": "दूसरों को अपना भविष्य तय न करने दें। बाहर कदम रखें और अपना वोट डालें।"
+    },
+    {
+      "text": "Your vote is your power. Don't waste it on election day.",
+      "text_hi": "आपका वोट आपकी शक्ति है। इसे चुनाव के दिन बर्बाद न करें।"
+    },
+    {
+      "text": "First-time voters are the architects of tomorrow's India.",
+      "text_hi": "पहली बार मतदान करने वाले मतदाता कल के भारत के निर्माता हैं।"
+    },
+    {
+      "text": "Complaining on social media changes nothing. Voting changes everything.",
+      "text_hi": "सोशल मीडिया पर शिकायत करने से कुछ नहीं बदलता। वोट करने से सब कुछ बदल जाता है।"
+    },
+    {
+      "text": "Take pride in the ink. It's the mark of an active citizen.",
+      "text_hi": "स्याही पर गर्व करें। यह एक सक्रिय नागरिक की निशानी है।"
+    }
+  ],
+  "impact_template": "In {constituency}, the last election was decided by just {margin} votes. Your vote could change the outcome.",
+  "impact_template_hi": "{constituency} में, पिछला चुनाव केवल {margin} वोटों से तय हुआ था। आपका वोट परिणाम बदल सकता है।"
+}

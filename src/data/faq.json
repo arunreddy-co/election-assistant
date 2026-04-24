@@ -1,0 +1,225 @@
+[
+  {
+    "id": "faq_01",
+    "question": "How do I register to vote?",
+    "question_hi": "मैं मतदान के लिए कैसे पंजीकरण करूँ?",
+    "answer": "You can register online via the Voters' Service Portal by filling out Form 6. You'll need age and address proof.",
+    "answer_hi": "आप फॉर्म 6 भरकर मतदाता सेवा पोर्टल के माध्यम से ऑनलाइन पंजीकरण कर सकते हैं। आपको आयु और पते के प्रमाण की आवश्यकता होगी।",
+    "category": "registration",
+    "related_links": [
+      "https://voters.eci.gov.in/"
+    ]
+  },
+  {
+    "id": "faq_02",
+    "question": "What is the minimum age to vote?",
+    "question_hi": "मतदान के लिए न्यूनतम आयु क्या है?",
+    "answer": "You must be at least 18 years old on the qualifying date (1st Jan, Apr, Jul, or Oct) of the year you are registering.",
+    "answer_hi": "पंजीकरण के वर्ष की योग्यता तिथि (1 जनवरी, अप्रैल, जुलाई या अक्टूबर) को आपकी आयु कम से कम 18 वर्ष होनी चाहिए।",
+    "category": "eligibility",
+    "related_links": []
+  },
+  {
+    "id": "faq_03",
+    "question": "Can I vote without a Voter ID card?",
+    "question_hi": "क्या मैं वोटर आईडी कार्ड के बिना मतदान कर सकता हूँ?",
+    "answer": "Yes, if your name is on the electoral roll, you can use alternative IDs like Aadhaar, PAN card, or Passport.",
+    "answer_hi": "हां, यदि आपका नाम मतदाता सूची में है, तो आप आधार, पैन कार्ड या पासपोर्ट जैसे वैकल्पिक आईडी का उपयोग कर सकते हैं।",
+    "category": "documents",
+    "related_links": []
+  },
+  {
+    "id": "faq_04",
+    "question": "How do I check if I'm registered?",
+    "question_hi": "मैं कैसे जांचूं कि मैं पंजीकृत हूं?",
+    "answer": "You can check your name on the electoral roll by visiting electoralsearch.in or using the Voter Helpline App.",
+    "answer_hi": "आप electoralsearch.in पर जाकर या वोटर हेल्पलाइन ऐप का उपयोग करके मतदाता सूची में अपना नाम देख सकते हैं।",
+    "category": "registration",
+    "related_links": [
+      "https://electoralsearch.eci.gov.in/"
+    ]
+  },
+  {
+    "id": "faq_05",
+    "question": "I lost my Voter ID, can I still vote?",
+    "question_hi": "मैंने अपना वोटर आईडी खो दिया है, क्या मैं अभी भी मतदान कर सकता हूं?",
+    "answer": "Yes, if your name is on the electoral roll, you can vote using any of the approved alternate photo IDs like Aadhaar, Passport, or PAN card.",
+    "answer_hi": "हां, यदि आपका नाम मतदाता सूची में है, तो आप आधार, पासपोर्ट या पैन कार्ड जैसे किसी भी स्वीकृत वैकल्पिक फोटो आईडी का उपयोग करके मतदान कर सकते हैं।",
+    "category": "eligibility",
+    "related_links": []
+  },
+  {
+    "id": "faq_06",
+    "question": "I moved cities, can I vote?",
+    "question_hi": "मैं दूसरे शहर चला गया हूं, क्या मैं मतदान कर सकता हूं?",
+    "answer": "You need to transfer your registration to your new constituency by filling Form 8 for shifting of residence.",
+    "answer_hi": "आपको निवास स्थानांतरित करने के लिए फॉर्म 8 भरकर अपना पंजीकरण अपने नए निर्वाचन क्षेत्र में स्थानांतरित करना होगा।",
+    "category": "registration",
+    "related_links": [
+      "https://voters.eci.gov.in/"
+    ]
+  },
+  {
+    "id": "faq_07",
+    "question": "Can I vote if I'm abroad (NRI)?",
+    "question_hi": "क्या मैं विदेश (NRI) में होने पर मतदान कर सकता हूं?",
+    "answer": "Yes, NRIs can vote, but you must register using Form 6A and vote in person at your assigned polling station in India.",
+    "answer_hi": "हां, अनिवासी भारतीय (NRI) मतदान कर सकते हैं, लेकिन आपको फॉर्म 6A का उपयोग करके पंजीकरण करना होगा और भारत में अपने निर्दिष्ट मतदान केंद्र पर व्यक्तिगत रूप से मतदान करना होगा।",
+    "category": "eligibility",
+    "related_links": [
+      "https://voters.eci.gov.in/"
+    ]
+  },
+  {
+    "id": "faq_08",
+    "question": "What if my name is not on the list?",
+    "question_hi": "अगर मेरा नाम सूची में नहीं है तो क्या होगा?",
+    "answer": "If your name is not on the electoral roll, you cannot vote. You must apply for new registration using Form 6.",
+    "answer_hi": "यदि आपका नाम मतदाता सूची में नहीं है, तो आप मतदान नहीं कर सकते। आपको फॉर्म 6 का उपयोग करके नए पंजीकरण के लिए आवेदन करना होगा।",
+    "category": "registration",
+    "related_links": [
+      "https://voters.eci.gov.in/"
+    ]
+  },
+  {
+    "id": "faq_09",
+    "question": "Is voting compulsory in India?",
+    "question_hi": "क्या भारत में मतदान अनिवार्य है?",
+    "answer": "No, voting is not legally compulsory in India, but it is highly encouraged as a fundamental civic duty.",
+    "answer_hi": "नहीं, भारत में मतदान कानूनी रूप से अनिवार्य नहीं है, लेकिन एक मौलिक नागरिक कर्तव्य के रूप में इसे अत्यधिक प्रोत्साहित किया जाता है।",
+    "category": "general",
+    "related_links": []
+  },
+  {
+    "id": "faq_10",
+    "question": "What is NOTA?",
+    "question_hi": "NOTA क्या है?",
+    "answer": "NOTA stands for 'None of the Above'. It allows voters to officially register a vote of rejection for all contesting candidates.",
+    "answer_hi": "NOTA का अर्थ 'इनमें से कोई नहीं' है। यह मतदाताओं को सभी चुनाव लड़ रहे उम्मीदवारों को खारिज करने के लिए आधिकारिक तौर पर वोट दर्ज करने की अनुमति देता है।",
+    "category": "process",
+    "related_links": []
+  },
+  {
+    "id": "faq_11",
+    "question": "Can I change my vote after pressing the button?",
+    "question_hi": "क्या बटन दबाने के बाद मैं अपना वोट बदल सकता हूं?",
+    "answer": "No, the EVM records only the first button press. Once cast, a vote cannot be changed.",
+    "answer_hi": "नहीं, EVM केवल पहली बार दबाए गए बटन को रिकॉर्ड करता है। एक बार वोट डालने के बाद उसे बदला नहीं जा सकता।",
+    "category": "process",
+    "related_links": []
+  },
+  {
+    "id": "faq_12",
+    "question": "What if the EVM malfunctions?",
+    "question_hi": "अगर EVM खराब हो जाए तो क्या होगा?",
+    "answer": "If an EVM malfunctions, the Presiding Officer will replace the unit immediately and voting will continue.",
+    "answer_hi": "यदि कोई EVM खराब हो जाती है, तो पीठासीन अधिकारी तुरंत यूनिट को बदल देगा और मतदान जारी रहेगा।",
+    "category": "technical",
+    "related_links": []
+  },
+  {
+    "id": "faq_13",
+    "question": "How are results counted?",
+    "question_hi": "परिणाम कैसे गिने जाते हैं?",
+    "answer": "EVMs are secured and taken to counting centers. On counting day, votes are tallied electronically under strict surveillance.",
+    "answer_hi": "EVM को सुरक्षित किया जाता है और मतगणना केंद्रों पर ले जाया जाता है। मतगणना के दिन, सख्त निगरानी में वोटों की इलेक्ट्रॉनिक रूप से गणना की जाती है।",
+    "category": "process",
+    "related_links": [
+      "https://results.eci.gov.in/"
+    ]
+  },
+  {
+    "id": "faq_14",
+    "question": "What is a re-poll?",
+    "question_hi": "पुनर्मतदान क्या है?",
+    "answer": "A re-poll is when the Election Commission orders fresh voting at specific booths due to irregularities or violence during the initial poll.",
+    "answer_hi": "पुनर्मतदान वह है जब चुनाव आयोग प्रारंभिक मतदान के दौरान अनियमितताओं या हिंसा के कारण विशिष्ट बूथों पर नए मतदान का आदेश देता है।",
+    "category": "process",
+    "related_links": []
+  },
+  {
+    "id": "faq_15",
+    "question": "Can I take my phone inside the booth?",
+    "question_hi": "क्या मैं बूथ के अंदर अपना फोन ले जा सकता हूं?",
+    "answer": "No, mobile phones, cameras, and other electronic devices are strictly prohibited inside the polling booth.",
+    "answer_hi": "नहीं, मतदान केंद्र के अंदर मोबाइल फोन, कैमरे और अन्य इलेक्ट्रॉनिक उपकरणों की सख्त मनाही है।",
+    "category": "process",
+    "related_links": []
+  },
+  {
+    "id": "faq_16",
+    "question": "What is the ink on my finger?",
+    "question_hi": "मेरी उंगली पर स्याही क्या है?",
+    "answer": "It is indelible ink applied to your left index finger to indicate you have voted and to prevent double voting.",
+    "answer_hi": "यह आपकी बायीं तर्जनी पर लगाई जाने वाली अमिट स्याही है जो यह दर्शाती है कि आपने मतदान किया है और दोहरे मतदान को रोकने के लिए है।",
+    "category": "general",
+    "related_links": []
+  },
+  {
+    "id": "faq_17",
+    "question": "Who decides election dates?",
+    "question_hi": "चुनाव की तारीखें कौन तय करता है?",
+    "answer": "The Election Commission of India decides dates for Lok Sabha and State Assemblies. State Election Commissions handle local bodies.",
+    "answer_hi": "भारत निर्वाचन आयोग लोकसभा और राज्य विधानसभाओं की तारीखें तय करता है। राज्य चुनाव आयोग स्थानीय निकायों को संभालते हैं।",
+    "category": "general",
+    "related_links": [
+      "https://eci.gov.in/"
+    ]
+  },
+  {
+    "id": "faq_18",
+    "question": "What documents do I need to carry?",
+    "question_hi": "मुझे कौन से दस्तावेज़ ले जाने होंगे?",
+    "answer": "You need to carry your Voter ID (EPIC) or any ONE approved alternate photo ID like Aadhaar, Passport, Driving License, or PAN Card.",
+    "answer_hi": "आपको अपना वोटर आईडी (EPIC) या आधार, पासपोर्ट, ड्राइविंग लाइसेंस या पैन कार्ड जैसा कोई भी एक स्वीकृत वैकल्पिक फोटो आईडी ले जाना होगा।",
+    "category": "documents",
+    "related_links": []
+  },
+  {
+    "id": "faq_19",
+    "question": "What are election phases?",
+    "question_hi": "चुनाव के चरण क्या हैं?",
+    "answer": "Large states or national elections are held in multiple phases on different dates to allow proper deployment of security forces.",
+    "answer_hi": "सुरक्षा बलों की उचित तैनाती की अनुमति देने के लिए बड़े राज्यों या राष्ट्रीय चुनावों को विभिन्न तारीखों पर कई चरणों में आयोजित किया जाता है।",
+    "category": "general",
+    "related_links": []
+  },
+  {
+    "id": "faq_20",
+    "question": "Can I vote by mail/postal ballot?",
+    "question_hi": "क्या मैं मेल/पोस्टल बैलेट द्वारा मतदान कर सकता हूँ?",
+    "answer": "Postal ballots are restricted to service voters (military), election staff, senior citizens (85+), and Persons with Disabilities.",
+    "answer_hi": "पोस्टल बैलेट सेवा मतदाताओं (सैन्य), चुनाव कर्मचारियों, वरिष्ठ नागरिकों (85+) और विकलांग व्यक्तियों तक सीमित हैं।",
+    "category": "process",
+    "related_links": []
+  },
+  {
+    "id": "faq_21",
+    "question": "What time do polls open and close?",
+    "question_hi": "मतदान किस समय शुरू और बंद होता है?",
+    "answer": "Polls typically open at 7:00 AM and close at 6:00 PM, though this may vary slightly by state or constituency.",
+    "answer_hi": "मतदान आमतौर पर सुबह 7:00 बजे शुरू होता है और शाम 6:00 बजे बंद होता है, हालांकि यह राज्य या निर्वाचन क्षेत्र के अनुसार थोड़ा भिन्न हो सकता है।",
+    "category": "process",
+    "related_links": []
+  },
+  {
+    "id": "faq_22",
+    "question": "What is a constituency?",
+    "question_hi": "निर्वाचन क्षेत्र क्या है?",
+    "answer": "A constituency is a specific geographical area whose residents elect one representative to a legislative body.",
+    "answer_hi": "एक निर्वाचन क्षेत्र एक विशिष्ट भौगोलिक क्षेत्र है जिसके निवासी एक विधायी निकाय के लिए एक प्रतिनिधि का चुनाव करते हैं।",
+    "category": "general",
+    "related_links": []
+  },
+  {
+    "id": "faq_23",
+    "question": "How do I find my constituency?",
+    "question_hi": "मैं अपना निर्वाचन क्षेत्र कैसे खोजूं?",
+    "answer": "Your constituency is determined by your residential address and can be found on your Voter ID or at electoralsearch.in.",
+    "answer_hi": "आपका निर्वाचन क्षेत्र आपके आवासीय पते से निर्धारित होता है और इसे आपके वोटर आईडी या electoralsearch.in पर पाया जा सकता है।",
+    "category": "process",
+    "related_links": [
+      "https://electoralsearch.eci.gov.in/"
+    ]
+  }
+]

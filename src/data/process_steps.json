@@ -1,0 +1,526 @@
+[
+  {
+    "election_type": "lok_sabha",
+    "steps": [
+      {
+        "step_number": 1,
+        "title": "Check Registration",
+        "title_hi": "पंजीकरण जांचें",
+        "description": "Verify if your name is already on the electoral roll.",
+        "description_hi": "सत्यापित करें कि क्या आपका नाम मतदाता सूची में है।",
+        "action_items": [
+          "Visit Electoral Search portal",
+          "Search by EPIC or details"
+        ],
+        "action_items_hi": [
+          "इलेक्टोरल सर्च पोर्टल पर जाएं",
+          "EPIC या विवरण द्वारा खोजें"
+        ],
+        "documents_needed": [
+          "EPIC Number"
+        ],
+        "links": [
+          "https://electoralsearch.eci.gov.in/"
+        ],
+        "estimated_time": "2 minutes online"
+      },
+      {
+        "step_number": 2,
+        "title": "Register/Get Voter ID",
+        "title_hi": "पंजीकरण करें/मतदाता पहचान पत्र प्राप्त करें",
+        "description": "Apply for a new Voter ID if not registered.",
+        "description_hi": "यदि पंजीकृत नहीं हैं तो नए मतदाता पहचान पत्र के लिए आवेदन करें।",
+        "action_items": [
+          "Fill Form 6 online",
+          "Upload required documents"
+        ],
+        "action_items_hi": [
+          "ऑनलाइन फॉर्म 6 भरें",
+          "आवश्यक दस्तावेज अपलोड करें"
+        ],
+        "documents_needed": [
+          "Age Proof",
+          "Address Proof",
+          "Passport Size Photo"
+        ],
+        "links": [
+          "https://voters.eci.gov.in/"
+        ],
+        "estimated_time": "15 minutes online"
+      },
+      {
+        "step_number": 3,
+        "title": "Find Polling Booth",
+        "title_hi": "मतदान केंद्र खोजें",
+        "description": "Locate your designated polling station before election day.",
+        "description_hi": "चुनाव के दिन से पहले अपने निर्दिष्ट मतदान केंद्र का पता लगाएं।",
+        "action_items": [
+          "Check Voter Helpline App",
+          "Use SMS service"
+        ],
+        "action_items_hi": [
+          "वोटर हेल्पलाइन ऐप जांचें",
+          "SMS सेवा का उपयोग करें"
+        ],
+        "documents_needed": [
+          "EPIC Number"
+        ],
+        "links": [
+          "https://electoralsearch.eci.gov.in/pollingstation"
+        ],
+        "estimated_time": "5 minutes online"
+      },
+      {
+        "step_number": 4,
+        "title": "Know Your Documents",
+        "title_hi": "अपने दस्तावेज़ जानें",
+        "description": "Gather valid ID proofs to carry on voting day.",
+        "description_hi": "मतदान के दिन ले जाने के लिए वैध आईडी प्रमाण एकत्र करें।",
+        "action_items": [
+          "Keep EPIC ready",
+          "Keep alternate ID ready (Aadhaar, Passport, etc.)"
+        ],
+        "action_items_hi": [
+          "EPIC तैयार रखें",
+          "वैकल्पिक आईडी तैयार रखें (आधार, पासपोर्ट, आदि)"
+        ],
+        "documents_needed": [
+          "Voter ID (EPIC)",
+          "Aadhaar Card",
+          "PAN Card",
+          "Passport"
+        ],
+        "links": [],
+        "estimated_time": "N/A"
+      },
+      {
+        "step_number": 5,
+        "title": "Polling Day Guide",
+        "title_hi": "मतदान दिवस मार्गदर्शिका",
+        "description": "Steps to follow at the polling booth on election day.",
+        "description_hi": "चुनाव के दिन मतदान केंद्र पर पालन किए जाने वाले कदम।",
+        "action_items": [
+          "Verify ID at entry",
+          "Get finger inked",
+          "Cast vote on EVM",
+          "Verify VVPAT slip"
+        ],
+        "action_items_hi": [
+          "प्रवेश पर आईडी सत्यापित करें",
+          "उंगली पर स्याही लगवाएं",
+          "EVM पर वोट डालें",
+          "VVPAT पर्ची सत्यापित करें"
+        ],
+        "documents_needed": [
+          "Voter ID or Alternate ID"
+        ],
+        "links": [],
+        "estimated_time": "Same day at booth"
+      },
+      {
+        "step_number": 6,
+        "title": "After Voting",
+        "title_hi": "मतदान के बाद",
+        "description": "You've successfully voted. Wait for election results.",
+        "description_hi": "आपने सफलतापूर्वक मतदान किया है। चुनाव परिणामों की प्रतीक्षा करें।",
+        "action_items": [
+          "Check ECI results portal on counting day"
+        ],
+        "action_items_hi": [
+          "मतगणना के दिन ECI परिणाम पोर्टल की जाँच करें"
+        ],
+        "documents_needed": [],
+        "links": [
+          "https://results.eci.gov.in/"
+        ],
+        "estimated_time": "N/A"
+      }
+    ]
+  },
+  {
+    "election_type": "vidhan_sabha",
+    "steps": [
+      {
+        "step_number": 1,
+        "title": "Check Registration",
+        "title_hi": "पंजीकरण जांचें",
+        "description": "Verify if your name is on the state electoral roll to vote for your MLA.",
+        "description_hi": "सत्यापित करें कि क्या आपका नाम अपने विधायक को वोट देने के लिए राज्य मतदाता सूची में है।",
+        "action_items": [
+          "Visit Electoral Search portal",
+          "Search by EPIC or details"
+        ],
+        "action_items_hi": [
+          "इलेक्टोरल सर्च पोर्टल पर जाएं",
+          "EPIC या विवरण द्वारा खोजें"
+        ],
+        "documents_needed": [
+          "EPIC Number"
+        ],
+        "links": [
+          "https://electoralsearch.eci.gov.in/"
+        ],
+        "estimated_time": "2 minutes online"
+      },
+      {
+        "step_number": 2,
+        "title": "Register/Get Voter ID",
+        "title_hi": "पंजीकरण करें/मतदाता पहचान पत्र प्राप्त करें",
+        "description": "Apply for a Voter ID if you are a new voter in this state.",
+        "description_hi": "यदि आप इस राज्य में एक नए मतदाता हैं तो मतदाता पहचान पत्र के लिए आवेदन करें।",
+        "action_items": [
+          "Fill Form 6 online",
+          "Upload required documents"
+        ],
+        "action_items_hi": [
+          "ऑनलाइन फॉर्म 6 भरें",
+          "आवश्यक दस्तावेज अपलोड करें"
+        ],
+        "documents_needed": [
+          "Age Proof",
+          "Address Proof",
+          "Passport Size Photo"
+        ],
+        "links": [
+          "https://voters.eci.gov.in/"
+        ],
+        "estimated_time": "15 minutes online"
+      },
+      {
+        "step_number": 3,
+        "title": "Find Polling Booth",
+        "title_hi": "मतदान केंद्र खोजें",
+        "description": "Locate your designated polling station within your assembly constituency.",
+        "description_hi": "अपने विधानसभा क्षेत्र के भीतर अपने निर्दिष्ट मतदान केंद्र का पता लगाएं।",
+        "action_items": [
+          "Check Voter Helpline App",
+          "Use SMS service"
+        ],
+        "action_items_hi": [
+          "वोटर हेल्पलाइन ऐप जांचें",
+          "SMS सेवा का उपयोग करें"
+        ],
+        "documents_needed": [
+          "EPIC Number"
+        ],
+        "links": [
+          "https://electoralsearch.eci.gov.in/pollingstation"
+        ],
+        "estimated_time": "5 minutes online"
+      },
+      {
+        "step_number": 4,
+        "title": "Know Your Documents",
+        "title_hi": "अपने दस्तावेज़ जानें",
+        "description": "Gather valid ID proofs to carry on assembly voting day.",
+        "description_hi": "विधानसभा मतदान के दिन ले जाने के लिए वैध आईडी प्रमाण एकत्र करें।",
+        "action_items": [
+          "Keep EPIC ready",
+          "Keep alternate ID ready"
+        ],
+        "action_items_hi": [
+          "EPIC तैयार रखें",
+          "वैकल्पिक आईडी तैयार रखें"
+        ],
+        "documents_needed": [
+          "Voter ID (EPIC)",
+          "Aadhaar Card",
+          "PAN Card",
+          "Passport"
+        ],
+        "links": [],
+        "estimated_time": "N/A"
+      },
+      {
+        "step_number": 5,
+        "title": "Polling Day Guide",
+        "title_hi": "मतदान दिवस मार्गदर्शिका",
+        "description": "Steps to follow at the polling booth to elect your state representative.",
+        "description_hi": "अपने राज्य प्रतिनिधि का चुनाव करने के लिए मतदान केंद्र पर पालन किए जाने वाले कदम।",
+        "action_items": [
+          "Verify ID at entry",
+          "Get finger inked",
+          "Cast vote on EVM for MLA candidate",
+          "Verify VVPAT slip"
+        ],
+        "action_items_hi": [
+          "प्रवेश पर आईडी सत्यापित करें",
+          "उंगली पर स्याही लगवाएं",
+          "विधायक उम्मीदवार के लिए EVM पर वोट डालें",
+          "VVPAT पर्ची सत्यापित करें"
+        ],
+        "documents_needed": [
+          "Voter ID or Alternate ID"
+        ],
+        "links": [],
+        "estimated_time": "Same day at booth"
+      },
+      {
+        "step_number": 6,
+        "title": "After Voting",
+        "title_hi": "मतदान के बाद",
+        "description": "Wait for state election results to see the new assembly formation.",
+        "description_hi": "नई विधानसभा के गठन को देखने के लिए राज्य चुनाव परिणामों की प्रतीक्षा करें।",
+        "action_items": [
+          "Check state CEO portal or ECI results on counting day"
+        ],
+        "action_items_hi": [
+          "मतगणना के दिन राज्य CEO पोर्टल या ECI परिणामों की जाँच करें"
+        ],
+        "documents_needed": [],
+        "links": [
+          "https://results.eci.gov.in/"
+        ],
+        "estimated_time": "N/A"
+      }
+    ]
+  },
+  {
+    "election_type": "municipal",
+    "steps": [
+      {
+        "step_number": 1,
+        "title": "Check Registration",
+        "title_hi": "पंजीकरण जांचें",
+        "description": "Verify your name in the municipal ward voter list.",
+        "description_hi": "नगर निगम वार्ड मतदाता सूची में अपना नाम सत्यापित करें।",
+        "action_items": [
+          "Visit State Election Commission portal",
+          "Search in ward list"
+        ],
+        "action_items_hi": [
+          "राज्य चुनाव आयोग के पोर्टल पर जाएं",
+          "वार्ड सूची में खोजें"
+        ],
+        "documents_needed": [
+          "EPIC Number"
+        ],
+        "links": [],
+        "estimated_time": "5 minutes online"
+      },
+      {
+        "step_number": 2,
+        "title": "Register/Get Voter ID",
+        "title_hi": "पंजीकरण करें/मतदाता पहचान पत्र प्राप्त करें",
+        "description": "Register if you are a new resident in the municipal limits.",
+        "description_hi": "यदि आप नगर निगम की सीमा में नए निवासी हैं तो पंजीकरण करें।",
+        "action_items": [
+          "Fill Form 6",
+          "Ensure correct ward address"
+        ],
+        "action_items_hi": [
+          "फॉर्म 6 भरें",
+          "सही वार्ड पता सुनिश्चित करें"
+        ],
+        "documents_needed": [
+          "Address Proof",
+          "Age Proof"
+        ],
+        "links": [],
+        "estimated_time": "15 minutes online"
+      },
+      {
+        "step_number": 3,
+        "title": "Find Polling Booth",
+        "title_hi": "मतदान केंद्र खोजें",
+        "description": "Locate your polling booth for the local ward election.",
+        "description_hi": "स्थानीय वार्ड चुनाव के लिए अपने मतदान केंद्र का पता लगाएं।",
+        "action_items": [
+          "Check local corporation website",
+          "Contact local BLO"
+        ],
+        "action_items_hi": [
+          "स्थानीय निगम की वेबसाइट देखें",
+          "स्थानीय बीएलओ (BLO) से संपर्क करें"
+        ],
+        "documents_needed": [
+          "EPIC Number"
+        ],
+        "links": [],
+        "estimated_time": "5 minutes online"
+      },
+      {
+        "step_number": 4,
+        "title": "Know Your Documents",
+        "title_hi": "अपने दस्तावेज़ जानें",
+        "description": "Gather valid ID proofs accepted for municipal elections.",
+        "description_hi": "नगर निगम चुनावों के लिए स्वीकार्य वैध आईडी प्रमाण एकत्र करें।",
+        "action_items": [
+          "Keep EPIC ready",
+          "Keep alternate ID ready"
+        ],
+        "action_items_hi": [
+          "EPIC तैयार रखें",
+          "वैकल्पिक आईडी तैयार रखें"
+        ],
+        "documents_needed": [
+          "Voter ID (EPIC)",
+          "Aadhaar Card",
+          "PAN Card"
+        ],
+        "links": [],
+        "estimated_time": "N/A"
+      },
+      {
+        "step_number": 5,
+        "title": "Polling Day Guide",
+        "title_hi": "मतदान दिवस मार्गदर्शिका",
+        "description": "Cast your vote for your ward councillor/corporator.",
+        "description_hi": "अपने वार्ड पार्षद/नगरसेवक के लिए अपना वोट डालें।",
+        "action_items": [
+          "Verify ID",
+          "Get inked",
+          "Cast vote for Councillor (EVM or Ballot depending on state)"
+        ],
+        "action_items_hi": [
+          "आईडी सत्यापित करें",
+          "स्याही लगवाएं",
+          "पार्षद के लिए वोट डालें (राज्य के आधार पर EVM या मतपत्र)"
+        ],
+        "documents_needed": [
+          "Voter ID or Alternate ID"
+        ],
+        "links": [],
+        "estimated_time": "Same day at booth"
+      },
+      {
+        "step_number": 6,
+        "title": "After Voting",
+        "title_hi": "मतदान के बाद",
+        "description": "Wait for local counting to see your new ward representative.",
+        "description_hi": "अपने नए वार्ड प्रतिनिधि को देखने के लिए स्थानीय मतगणना की प्रतीक्षा करें।",
+        "action_items": [
+          "Follow local news or SEC portal for results"
+        ],
+        "action_items_hi": [
+          "परिणामों के लिए स्थानीय समाचार या SEC पोर्टल का अनुसरण करें"
+        ],
+        "documents_needed": [],
+        "links": [],
+        "estimated_time": "N/A"
+      }
+    ]
+  },
+  {
+    "election_type": "panchayat",
+    "steps": [
+      {
+        "step_number": 1,
+        "title": "Check Registration",
+        "title_hi": "पंजीकरण जांचें",
+        "description": "Verify your name in the village Panchayat voter list.",
+        "description_hi": "ग्राम पंचायत मतदाता सूची में अपना नाम सत्यापित करें।",
+        "action_items": [
+          "Check list at Panchayat office",
+          "Attend Gram Sabha meetings"
+        ],
+        "action_items_hi": [
+          "पंचायत कार्यालय में सूची देखें",
+          "ग्राम सभा की बैठकों में भाग लें"
+        ],
+        "documents_needed": [
+          "EPIC Number"
+        ],
+        "links": [],
+        "estimated_time": "10 minutes offline"
+      },
+      {
+        "step_number": 2,
+        "title": "Register/Get Voter ID",
+        "title_hi": "पंजीकरण करें/मतदाता पहचान पत्र प्राप्त करें",
+        "description": "Register if you are a new voter in the village.",
+        "description_hi": "यदि आप गांव में नए मतदाता हैं तो पंजीकरण करें।",
+        "action_items": [
+          "Contact BLO/Panchayat Secretary",
+          "Submit Form 6"
+        ],
+        "action_items_hi": [
+          "बीएलओ/पंचायत सचिव से संपर्क करें",
+          "फॉर्म 6 जमा करें"
+        ],
+        "documents_needed": [
+          "Address Proof",
+          "Age Proof"
+        ],
+        "links": [],
+        "estimated_time": "Offline submission"
+      },
+      {
+        "step_number": 3,
+        "title": "Find Polling Booth",
+        "title_hi": "मतदान केंद्र खोजें",
+        "description": "Usually the local government school or panchayat bhawan.",
+        "description_hi": "आमतौर पर स्थानीय सरकारी स्कूल या पंचायत भवन।",
+        "action_items": [
+          "Confirm with village head/BLO"
+        ],
+        "action_items_hi": [
+          "ग्राम प्रधान/बीएलओ से पुष्टि करें"
+        ],
+        "documents_needed": [],
+        "links": [],
+        "estimated_time": "N/A"
+      },
+      {
+        "step_number": 4,
+        "title": "Know Your Documents",
+        "title_hi": "अपने दस्तावेज़ जानें",
+        "description": "Gather valid ID proofs accepted for panchayat elections.",
+        "description_hi": "पंचायत चुनावों के लिए स्वीकार्य वैध आईडी प्रमाण एकत्र करें।",
+        "action_items": [
+          "Keep EPIC ready",
+          "Keep alternative village-level ID ready (like MNREGA Job Card)"
+        ],
+        "action_items_hi": [
+          "EPIC तैयार रखें",
+          "वैकल्पिक ग्राम-स्तर आईडी (जैसे मनरेगा जॉब कार्ड) तैयार रखें"
+        ],
+        "documents_needed": [
+          "Voter ID (EPIC)",
+          "Aadhaar Card",
+          "MNREGA Job Card"
+        ],
+        "links": [],
+        "estimated_time": "N/A"
+      },
+      {
+        "step_number": 5,
+        "title": "Polling Day Guide",
+        "title_hi": "मतदान दिवस मार्गदर्शिका",
+        "description": "Vote for your Sarpanch and Ward Members.",
+        "description_hi": "अपने सरपंच और वार्ड सदस्यों के लिए वोट करें।",
+        "action_items": [
+          "Verify ID",
+          "Get inked",
+          "Cast vote (Often using ballot papers in multiple colors)"
+        ],
+        "action_items_hi": [
+          "आईडी सत्यापित करें",
+          "स्याही लगवाएं",
+          "वोट डालें (अक्सर कई रंगों में मतपत्रों का उपयोग करके)"
+        ],
+        "documents_needed": [
+          "Voter ID or Alternate ID"
+        ],
+        "links": [],
+        "estimated_time": "Same day at booth"
+      },
+      {
+        "step_number": 6,
+        "title": "After Voting",
+        "title_hi": "मतदान के बाद",
+        "description": "Panchayat votes are often counted quickly, sometimes on the same day.",
+        "description_hi": "पंचायत वोटों की गिनती अक्सर जल्दी की जाती है, कभी-कभी उसी दिन।",
+        "action_items": [
+          "Wait for local announcements by Election Officer"
+        ],
+        "action_items_hi": [
+          "चुनाव अधिकारी द्वारा स्थानीय घोषणाओं की प्रतीक्षा करें"
+        ],
+        "documents_needed": [],
+        "links": [],
+        "estimated_time": "N/A"
+      }
+    ]
+  }
+]
