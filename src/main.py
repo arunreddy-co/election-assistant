@@ -31,7 +31,7 @@ from src.agents.timeline import TimelineAgent
 from src.agents.simulator import SimulatorAgent
 from src.services.firestore_service import get_firestore_service
 from src.services.maps_service import get_maps_service
-from src.utils.validators import sanitize_string, is_safe_input
+from src.utils.validators import sanitize_string, is_safe_input, validate_state
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -229,7 +229,6 @@ async def onboard_user(request: Request, body: OnboardRequest):
 async def get_elections(request: Request, state: str, language: str = "en"):
     """Get all upcoming elections for a state."""
     try:
-        from src.utils.validators import validate_state
         if not validate_state(state):
             return JSONResponse(
                 status_code=400,

@@ -19,7 +19,14 @@ class FirestoreService:
     """
     
     def __init__(self):
-        """Initialize Firestore client."""
+        """Initialize Firestore client and define collections.
+        
+        Args:
+            None
+            
+        Returns:
+            None
+        """
         try:
             self.client = firestore.AsyncClient(project=settings.google_cloud_project)
             self.users_coll = self.client.collection(settings.firestore_collection_users)
@@ -223,7 +230,14 @@ class FirestoreService:
 _firestore_service: Optional[FirestoreService] = None
 
 def get_firestore_service() -> FirestoreService:
-    """Get or create the Firestore service singleton."""
+    """Get or create the Google Cloud Firestore service singleton instance.
+    
+    Args:
+        None
+        
+    Returns:
+        The shared FirestoreService instance.
+    """
     global _firestore_service
     if _firestore_service is None:
         _firestore_service = FirestoreService()

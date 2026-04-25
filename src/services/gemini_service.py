@@ -36,7 +36,14 @@ class GeminiService:
     """
     
     def __init__(self):
-        """Initialize Vertex AI client with project config."""
+        """Initialize Vertex AI client with project configuration.
+        
+        Args:
+            None
+            
+        Returns:
+            None
+        """
         try:
             vertexai.init(project=settings.google_cloud_project, location=settings.google_cloud_region)
             self.model = GenerativeModel(
@@ -61,7 +68,13 @@ class GeminiService:
     ) -> str:
         """Build a complete prompt with context and language instruction.
         
-        This is a private helper — not called directly by agents.
+        Args:
+            message: The raw user message.
+            context: Dictionary with user profile and session details.
+            language: The response language code ('en' or 'hi').
+            
+        Returns:
+            A formatted prompt string for the LLM.
         """
         prompt_parts = []
         
@@ -209,7 +222,14 @@ class GeminiService:
 _gemini_service: Optional[GeminiService] = None
 
 def get_gemini_service() -> GeminiService:
-    """Get or create the Gemini service singleton."""
+    """Get or create the Gemini service singleton instance.
+    
+    Args:
+        None
+        
+    Returns:
+        The shared GeminiService instance.
+    """
     global _gemini_service
     if _gemini_service is None:
         _gemini_service = GeminiService()

@@ -16,7 +16,14 @@ class TimelineAgent:
     """Generates personalized election timelines."""
     
     def __init__(self):
-        """Load election schedule data."""
+        """Load election schedule and state data from JSON files.
+        
+        Args:
+            None
+            
+        Returns:
+            None
+        """
         self.elections = []
         self.states = []
         
@@ -32,7 +39,15 @@ class TimelineAgent:
                 self.states = json.load(f)
 
     def calculate_countdown(self, tentative_year: int, tentative_month: Optional[int]) -> Dict[str, Any]:
-        """Calculate days/months until an election."""
+        """Calculate the remaining time until an election date.
+        
+        Args:
+            tentative_year: The year the election is expected to occur.
+            tentative_month: The month the election is expected to occur.
+            
+        Returns:
+            A dictionary with days remaining, months remaining, and countdown text.
+        """
         now = datetime.now()
         target_month = tentative_month or 1
         target_date = datetime(tentative_year, target_month, 1)
@@ -49,7 +64,15 @@ class TimelineAgent:
         }
 
     def get_elections_for_state(self, state: str, language: str = "en") -> List[Dict[str, Any]]:
-        """Get all upcoming elections for a user's state."""
+        """Get all upcoming national and state-specific elections for a given state.
+        
+        Args:
+            state: The name of the Indian state.
+            language: The language for the election titles and descriptions.
+            
+        Returns:
+            A list of election dictionaries sorted by proximity.
+        """
         state_elecs = []
         for e in self.elections:
             st = e.get("state", "")
@@ -65,7 +88,16 @@ class TimelineAgent:
         return state_elecs
 
     def get_election_detail(self, state: str, election_type: str, language: str = "en") -> Optional[Dict[str, Any]]:
-        """Get detailed information about a specific election."""
+        """Get detailed information about a specific election type for a state.
+        
+        Args:
+            state: The name of the Indian state.
+            election_type: The category of election (e.g., 'lok_sabha').
+            language: The language for the content.
+            
+        Returns:
+            The election detail dictionary if found, otherwise None.
+        """
         elecs = self.get_elections_for_state(state, language)
         for e in elecs:
             if e.get("election_type") == election_type:
@@ -73,6 +105,14 @@ class TimelineAgent:
         return None
 
     def get_nearest_election(self, state: str, language: str = "en") -> Optional[Dict[str, Any]]:
-        """Get the single nearest upcoming election."""
+        """Identify the single closest upcoming election for a user's location.
+        
+        Args:
+            state: The name of the Indian state.
+            language: The response language.
+            
+        Returns:
+            The dictionary of the nearest election, or None if none exist.
+        """
         elecs = self.get_elections_for_state(state, language)
         return elecs[0] if elecs else None

@@ -2,6 +2,12 @@
 
 Determines voter eligibility based on user profile,
 provides personalized guidance for different voter categories.
+
+Args:
+    None
+
+Returns:
+    None
 """
 
 import json
@@ -15,7 +21,14 @@ from src.utils.logger import get_logger
 logger = get_logger(__name__)
 
 class VoterCategory:
-    """Voter categories based on eligibility check."""
+    """Voter categories based on eligibility check.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+    """
     UNDER_18 = "under_18"
     FIRST_TIME = "first_time_voter"
     REGISTERED = "registered_voter"
@@ -23,10 +36,24 @@ class VoterCategory:
     UNREGISTERED = "unregistered"
 
 class EligibilityAgent:
-    """Checks voter eligibility and categorizes users."""
+    """Checks voter eligibility and categorizes users.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+    """
     
     def __init__(self):
-        """Load eligibility rules from JSON."""
+        """Load eligibility rules from JSON.
+        
+        Args:
+            None
+            
+        Returns:
+            None
+        """
         self.turnout_stats = {}
         
         turnout_path = Path("src/data/turnout_stats.json")
@@ -37,7 +64,17 @@ class EligibilityAgent:
         self.gemini = get_gemini_service()
 
     def check_eligibility(self, age: int, voter_id: Optional[str] = None, is_nri: bool = False) -> Dict[str, Any]:
-        """Determine voter eligibility and category."""
+        """Determine voter eligibility and category.
+        
+        Args:
+            age: The user's age in years.
+            voter_id: The user's voter ID number, if available.
+            is_nri: Whether the user is a Non-Resident Indian.
+            
+        Returns:
+            A dictionary containing eligibility status, category, message, 
+            next steps, and years until eligible if applicable.
+        """
         if age < 18:
             return {
                 "eligible": False,
@@ -78,7 +115,17 @@ class EligibilityAgent:
         }
 
     async def get_personalized_guidance(self, category: str, user_context: Dict[str, Any], language: str = "en") -> Dict[str, Any]:
-        """Generate personalized guidance based on voter category."""
+        """Generate personalized guidance based on voter category.
+        
+        Args:
+            category: The voter's eligibility category.
+            user_context: Dictionary containing user profile information.
+            language: The preferred language for the guidance message.
+            
+        Returns:
+            A dictionary containing the guidance message, a fun fact, 
+            and a motivation stat.
+        """
         age = user_context.get("age", 18)
         state = user_context.get("state", "India")
         name = user_context.get("name", "Voter")
@@ -91,8 +138,7 @@ class EligibilityAgent:
             
         msg = "Your vote is your voice."
         try:
-            resp = await self.gemini.model.generate_content_async(prompt)
-            msg = resp.text.strip()
+            msg = await self.gemini.generate_response(prompt, user_context, language)
         except Exception as e:
             logger.error(f"Failed to generate guidance: {e}")
             
@@ -103,7 +149,15 @@ class EligibilityAgent:
         }
 
     def get_age_group_stats(self, age: int) -> Dict[str, Any]:
-        """Get voting statistics for the user's age group."""
+        """Get voting statistics for the user's age group.
+        
+        Args:
+            age: The user's age in years.
+            
+        Returns:
+            A dictionary containing the age group label, turnout 
+            percentage, and a comparison message.
+        """
         group = "18-25"
         if age > 60: group = "60+"
         elif age > 40: group = "40-60"

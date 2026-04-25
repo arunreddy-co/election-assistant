@@ -45,7 +45,14 @@ class Orchestrator:
     }
     
     def __init__(self):
-        """Initialize orchestrator with FAQ data."""
+        """Initialize orchestrator with FAQ data and specialist agents.
+        
+        Args:
+            None
+            
+        Returns:
+            None
+        """
         faq_path = Path("src/data/faq.json")
         self.faqs = []
         if faq_path.exists():
@@ -57,7 +64,14 @@ class Orchestrator:
         self.timeline_agent = TimelineAgent()
 
     def _keyword_match(self, message: str) -> Optional[str]:
-        """Check message against keyword map."""
+        """Check the user message against the predefined keyword map.
+        
+        Args:
+            message: The raw chat message from the user.
+            
+        Returns:
+            An IntentCategory string if a match is found, otherwise None.
+        """
         msg = message.lower().strip()
         for intent, keywords in self.KEYWORD_MAP.items():
             if any(k in msg for k in keywords):
@@ -65,7 +79,14 @@ class Orchestrator:
         return None
 
     def _faq_match(self, message: str) -> Optional[Dict[str, Any]]:
-        """Check if message matches a known FAQ question."""
+        """Check if the user message matches any question in the FAQ data.
+        
+        Args:
+            message: The user's input message.
+            
+        Returns:
+            The matching FAQ dictionary if found, otherwise None.
+        """
         msg = message.lower().strip()
         for faq in self.faqs:
             q_en = faq.get("question", "").lower()
@@ -75,7 +96,15 @@ class Orchestrator:
         return None
 
     async def classify_intent(self, message: str, user_context: Optional[Dict[str, Any]] = None) -> str:
-        """Classify user message into an intent category."""
+        """Determine the category of the user's message.
+        
+        Args:
+            message: The user's input message text.
+            user_context: Optional dictionary containing user profile details.
+            
+        Returns:
+            A string representing the identified intent category.
+        """
         matched_intent = self._keyword_match(message)
         if matched_intent:
             return matched_intent
@@ -96,7 +125,16 @@ class Orchestrator:
             return IntentCategory.GENERAL
 
     async def route_and_respond(self, message: str, user_context: Optional[Dict[str, Any]] = None, language: str = "en") -> Dict[str, Any]:
-        """Classify intent, route to agent, and return response."""
+        """Classify user intent, route to the appropriate agent, and return a response.
+        
+        Args:
+            message: The user's chat message.
+            user_context: Optional dictionary with user details (age, state, etc.).
+            language: The response language, either 'en' or 'hi'.
+            
+        Returns:
+            A dictionary containing the intent, response text, and suggestions.
+        """
         intent = await self.classify_intent(message, user_context)
         
         if intent == IntentCategory.FAQ:

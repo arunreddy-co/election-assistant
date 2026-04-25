@@ -1,0 +1,9 @@
+.venv/
+.env
+__pycache__/
+tests/
+.pytest_cache/
+.git/
+.agents/
+*.pyc
+repo.bundle

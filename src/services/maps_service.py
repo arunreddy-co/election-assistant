@@ -17,7 +17,14 @@ class MapsService:
     """
     
     def __init__(self):
-        """Initialize Google Maps client with API key from config."""
+        """Initialize Google Maps client with API key from configuration.
+        
+        Args:
+            None
+            
+        Returns:
+            None
+        """
         try:
             self.client = googlemaps.Client(key=settings.google_maps_api_key)
         except Exception as e:
@@ -84,7 +91,14 @@ class MapsService:
 _maps_service: Optional[MapsService] = None
 
 def get_maps_service() -> MapsService:
-    """Get or create the Maps service singleton."""
+    """Get or create the Google Maps service singleton instance.
+    
+    Args:
+        None
+        
+    Returns:
+        The shared MapsService instance.
+    """
     global _maps_service
     if _maps_service is None:
         _maps_service = MapsService()

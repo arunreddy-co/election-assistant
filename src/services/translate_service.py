@@ -18,7 +18,14 @@ class TranslateService:
     """
     
     def __init__(self):
-        """Initialize Translation client with project config."""
+        """Initialize Google Cloud Translation client with project configuration.
+        
+        Args:
+            None
+            
+        Returns:
+            None
+        """
         try:
             self.client = translate_v3.TranslationServiceClient()
             self.parent = settings.google_translate_parent
@@ -107,7 +114,14 @@ class TranslateService:
 _translate_service: Optional[TranslateService] = None
 
 def get_translate_service() -> TranslateService:
-    """Get or create the Translate service singleton."""
+    """Get or create the Google Cloud Translation service singleton instance.
+    
+    Args:
+        None
+        
+    Returns:
+        The shared TranslateService instance.
+    """
     global _translate_service
     if _translate_service is None:
         _translate_service = TranslateService()
