@@ -2,10 +2,9 @@
 
 > **Your Vote, Your Voice** | आपका वोट, आपकी आवाज़
 
-VoteReady is an intelligent, interactive election assistant that 
-prepares Indian citizens for voting — with personalized election 
-timelines, a voter readiness tracker, an election day simulator, 
-and a context-aware AI guide.
+VoteReady is an AI-powered election readiness platform designed to help Indian citizens understand the voting process through personalized guidance, interactive simulations, readiness tracking, and multilingual assistance.
+
+The system combines AI agents, structured election workflows, and accessibility-focused design to make election information easier to understand and act upon.
 
 **Built for PromptWars 2026 — Election Process Assistant vertical**
 
@@ -22,10 +21,13 @@ interactive and easy-to-follow way.
 ## 💡 Approach and Logic
 
 ### The Problem
-India has 960M+ eligible voters, but voter turnout among 18-25 year 
-olds is consistently below 50%. Election information is fragmented 
-across dozens of government websites, PDFs, and news sources. No 
-single tool personalizes the journey AND motivates action.
+Election information is often fragmented across government websites, documents, and multiple platforms.
+
+First-time voters especially struggle with understanding:
+- registration processes
+- eligibility requirements
+- election timelines
+- polling procedures
 
 ### Our Solution
 VoteReady goes beyond a chatbot. It's a **voter activation platform** 
@@ -71,7 +73,39 @@ with three key differentiators:
 │  Gemini 2.5 │ Maps API │ Translate │Firestore │
 │  (Vertex)  │          │    API    │          │
 └─────────────────────────────────────────────┘
+
+## Agent Responsibilities
+
+### Orchestrator Agent
+Coordinates user requests and routes tasks.
+
+### Eligibility Agent
+Determines voter readiness based on profile information.
+
+### Timeline Agent
+Generates election-related schedules and reminders.
+
+### Process Guide Agent
+Explains voting procedures step-by-step.
+
+### Simulator Agent
+Creates interactive election-day scenarios.
+
 ```
+
+## Why Agentic AI?
+
+A traditional chatbot can answer election-related questions.
+
+VoteReady requires multiple reasoning workflows:
+
+1. Understand the user's voter profile.
+2. Identify relevant election processes.
+3. Generate personalized guidance.
+4. Simulate real-world voting scenarios.
+5. Provide context-aware responses.
+
+The system uses specialized agents instead of a single conversational model to handle these different responsibilities.
 
 ### User Paths
 The app delivers four distinct experiences based on user profile:
@@ -134,6 +168,20 @@ The app delivers four distinct experiences based on user profile:
 - API keys stored in environment variables, never in code
 - Gemini system prompt hardened against prompt injection
 - No internal error details exposed to clients
+
+## Responsible AI Considerations
+
+VoteReady is designed as a neutral civic education assistant.
+
+The system:
+
+- Does not recommend political parties or candidates.
+- Does not influence voting decisions.
+- Separates factual information from generated explanations.
+- Communicates assumptions and limitations clearly.
+- Uses structured election information rather than generating unsupported claims.
+
+The goal is to improve voter awareness, not influence voter choices.
 
 ## ♿ Accessibility Features
 - Bilingual: English and Hindi
@@ -219,14 +267,31 @@ gcloud run deploy voteready \
 ---
 
 ## 🛠️ Tech Stack
-- **Backend**: Python 3.11, FastAPI, Pydantic
-- **Frontend**: Vanilla JS, Tailwind CSS, Chart.js
-- **AI**: Gemini 2.5 via Vertex AI
-- **Database**: Google Cloud Firestore
-- **APIs**: Google Maps, Cloud Translation
-- **Deployment**: Google Cloud Run, Docker
-- **Testing**: pytest, httpx
-
+| Layer | Technology |
+|-|-|
+| Backend | FastAPI, Python 3.11, Pydantic |
+| Frontend | Vanilla JS, Tailwind CSS, Chart.js |
+| AI | Gemini 2.5 via Vertex AI |
+| Database | Google Firestore |
+| APIs | Google Maps API, Cloud Translation |
+| Deployment | Docker, Cloud Run |
+| Testing | pytest, httpx |
 ---
 
+## My Contribution
+
+I designed and implemented the overall system architecture including:
+
+- FastAPI backend structure
+- AI agent workflow
+- API design
+- Security middleware
+- Frontend interaction flow
+- Accessibility features
+- Testing strategy
+- Cloud deployment workflow
+
+AI tools were used during development for exploration, debugging, and iteration. All system architecture decisions, integrations, and validations were manually reviewed.
+
 Built with ❤️ for Indian democracy.
+
